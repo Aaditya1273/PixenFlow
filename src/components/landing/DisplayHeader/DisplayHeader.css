@@ -140,13 +140,11 @@
   left: 0;
   background: #FF6B00;
   box-shadow: 0 0 8px rgba(255, 107, 0, 0.6), 0 0 12px rgba(255, 107, 0, 0.4);
-  transform-origin: center;
   transition: transform 0.3s ease-out;
 }
 
 .nav-link:hover::after, .active-link::after {
   transform: scaleX(1);
-  transform-origin: center;
 }
 
 .active-link::before {
