@@ -95,20 +95,7 @@ const MagnetDemo = () => {
           </Magnet>
         </Box>
 
-        <h2 className="demo-title-extra">Link</h2>
-        <Box position="relative" className="demo-container" minH={300}>
-          <Magnet
-            padding={Math.floor(padding / 2)}
-            disabled={disabled}
-            magnetStrength={magnetStrength}
-          >
-            <a href="https://github.com/DavidHDev/react-bits" target="_blank" rel="noreferrer">
-              <Flex fontSize="lg" color="#fff">
-                Star&nbsp;<Text color="#5227FF">Pixen Flow</Text>&nbsp;on GitHub!
-              </Flex>
-            </a>
-          </Magnet>
-        </Box>
+
 
         <Customize>
           <PreviewSwitch

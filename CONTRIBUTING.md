@@ -1,6 +1,6 @@
-# Contributing to React Bits
+# Contributing to Pixen Flow
 
-Thank you for considering contributing to React Bits! I appreciate your interest in making this project better.
+Thank you for considering contributing to Pixen Flow! I appreciate your interest in making this project better.
 
 To ensure a smooth collaboration, please read the following guidelines before getting started.
 
@@ -28,6 +28,7 @@ We welcome pull requests from everyone as long as they respect the quality stand
 6. Before you open a pull request, please make sure that your changes are tested locally, and everything looks good on desktop and mobile, also check the browser console for errors, and so on, so that we can keep this library at the highest quality possible.
 7. Any pull requests that fail to meet these requirements will be denied, so please make sure you respect them so that your work can go through.
 
+# Contributing to Pixen Flow
 ## Note
 
 New components from the community are currently not being accepted into the library, only component enhancements and bug fixes are open for contributions.

@@ -24,7 +24,7 @@
 }
 
 .footer-logo {
-  height: 28px;
+  height: 42px;
   width: auto;
   opacity: 0.9;
   transition: all 0.3s ease;
@@ -53,7 +53,7 @@
   }
 
   .footer-logo {
-    height: 24px;
+    height: 36px;
   }
 
   .footer-copyright {

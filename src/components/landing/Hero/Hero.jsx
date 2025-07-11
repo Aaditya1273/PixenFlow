@@ -41,7 +41,7 @@ const Hero = () => {
         <h1 className="landing-title">
           <ResponsiveSplitText
             isMobile={isMobile}
-            text="Animated React components"
+            text="Stunning UI components"
             className="hero-split"
             splitType="chars"
             delay={30}
@@ -51,7 +51,7 @@ const Hero = () => {
           <br />
           <ResponsiveSplitText
             isMobile={isMobile}
-            text="for creative developers"
+            text="for modern developers"
             className="hero-split"
             splitType="chars"
             delay={30}
@@ -66,7 +66,7 @@ const Hero = () => {
           splitType="words"
           delay={10}
           duration={1}
-          text="Eighty-plus snippets, ready to be dropped into your React projects"
+          text="Over 80 production-ready snippets to bring your React projects to life"
         />
 
         <Link to={"/text-animations/split-text"} className="landing-button">

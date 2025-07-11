@@ -12,7 +12,7 @@ export const circularText = {
   usage: `import CircularText from './CircularText';
   
 <CircularText
-  text="REACT*BITS*COMPONENTS*"
+  text="PIXEN*FLOW*COMPONENTS*"
   onHover="speedUp"
   spinDuration={20}
   className="custom-class"

@@ -208,7 +208,12 @@
 @keyframes glow-pulse {
   0% {
     filter: brightness(1) saturate(1);
-    box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
+:root {
+  --primary-orange: #FF6B00;
+  --secondary-orange: #FF4500;
+  --background-black: #000000;
+  --text-white: #FFFFFF;
+}    box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
   }
 
   100% {

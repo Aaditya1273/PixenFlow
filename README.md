@@ -4,7 +4,7 @@
     <picture>
       <source media="(prefers-color-scheme: light)" srcset="src/assets/logos/reactbits-gh-black.svg">
       <source media="(prefers-color-scheme: dark)" srcset="src/assets/logos/reactbits-gh-white.svg">
-      <img src="src/assets/logos/reactbits-gh-black.svg" alt="react-bits logo" width="1000">
+      <img src="src/assets/logos/reactbits-gh-black.svg" alt="pixen-flow logo" width="1000">
     </picture>
 	<br>
 	<br>
