@@ -23,7 +23,7 @@ import { useDeviceOS } from "react-haiku";
 import { useSearch } from "../context/SearchContext/useSearch";
 import { useLanguage } from "../context/LanguageContext/useLanguage";
 
-import Logo from "../../assets/logos/react-bits-logo.svg";
+import Logo from "../../assets/logos/new-logo.svg";
 import FadeContent from "../../content/Animations/FadeContent/FadeContent";
 
 const Header = () => {

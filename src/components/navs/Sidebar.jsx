@@ -26,11 +26,15 @@ import {
   memo,
   useEffect,
 } from "react";
-import { CATEGORIES, NEW, UPDATED } from "../../constants/Categories";
+import {
+  CATEGORIES,
+  NEW,
+  UPDATED
+} from "../../constants/Categories";
 import { componentMap } from "../../constants/Components";
 import { useSearch } from "../context/SearchContext/useSearch";
 import { useTransition } from "../../hooks/useTransition";
-import Logo from "../../assets/logos/react-bits-logo.svg";
+import Logo from "../../assets/logos/new-logo.svg";
 
 const HOVER_TIMEOUT_DELAY = 150;
 const ICON_BUTTON_STYLES = {
