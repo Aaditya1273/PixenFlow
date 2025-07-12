@@ -56,7 +56,7 @@
 }
 
 .value-indicator {
-  color: #808080;
+  color: #FFA500;
   position: absolute;
   transform: translateY(-1rem);
   font-size: 0.75rem;

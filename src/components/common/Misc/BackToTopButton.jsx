@@ -35,17 +35,13 @@ const BackToTopButton = () => {
 
   return (
     <Button
-      fontWeight={600}
+      fontWeight={500}
       rounded='xl'
       py={4}
       right='2.3em'
       position='fixed'
       zIndex={98}
-      backgroundColor="#000000"
-      border="1px solid #FF6B00"
-      boxShadow="0 0 20px rgba(255, 107, 0, 0.4)"
-      _hover={{ backgroundColor: "#1A1A1A", boxShadow: "0 0 25px rgba(255, 107, 0, 0.6)" }}
-      _active={{ backgroundColor: "#FF6B00" }}
+      boxShadow="10px 0 25px rgba(0, 0, 6, 1)"
       transition="0.3s ease"
       className="back-to-top"
       opacity={visible ? 1 : 0}

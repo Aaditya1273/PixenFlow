@@ -23,10 +23,6 @@ export default defineConfig({
       '@ts-tailwind': path.resolve(__dirname, 'src/ts-tailwind'),
     },
   },
-  css: {
-    postcss: {
-      parser: safeParser
-    }
-  },
+
   assetsInclude: ['**/*.glb']
 })

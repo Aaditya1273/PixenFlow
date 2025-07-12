@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 input[type="color"] {
@@ -54,8 +56,8 @@ input[type="color"]::-moz-color-swatch {
 }
 
 .chakra-select:focus-visible {
-  border-color: #FF6B00 !important;
-  box-shadow: 0 0 0 1px rgba(255, 107, 0, 0.5) !important;
+  border-color: #FFA500 !important;
+  box-shadow: 0 0 0 1px rgba(255, 165, 0, 0.5) !important;
 }
 
 a {
@@ -76,6 +78,6 @@ body {
 }
 
 .back-to-top {
-  background: #000000 !important;
-  border: 1px solid #FF6B00;
+  background: #1a1a1a !important;
+  border: 1px solid #555;
 }

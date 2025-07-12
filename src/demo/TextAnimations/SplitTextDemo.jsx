@@ -45,37 +45,33 @@ const SplitTextDemo = () => {
     <TabbedLayout>
       <PreviewTab>
         <Box
-            position="relative"
-            className="demo-container"
-            minH={400}
-            overflow="hidden"
-            bg="#000000"
-            borderRadius="15px"
-            border="1px solid #FF6B00"
-            boxShadow="0 0 15px rgba(255, 107, 0, 0.2)"
-          >
-            <RefreshButton onClick={forceRerender} />
-            <SplitText
-              key={key}
-              text="Hello, you!"
-              delay={delay}
-              duration={duration}
-              ease={ease}
-              splitType={splitType}
-              threshold={threshold}
-              className="split-text-demo"
-              onLetterAnimationComplete={showCallback ? () => toast("✅ Animation Finished!") : undefined}
-            />
+          position="relative"
+          className="demo-container"
+          minH={400}
+          overflow="hidden"
+        >
+          <RefreshButton onClick={forceRerender} />
+          <SplitText
+            key={key}
+            text="Hello, you!"
+            delay={delay}
+            duration={duration}
+            ease={ease}
+            splitType={splitType}
+            threshold={threshold}
+            className="split-text-demo"
+            onLetterAnimationComplete={showCallback ? () => toast("✅ Animation Finished!") : undefined}
+          />
         </Box>
 
         <Customize>
           <Flex gap={2} wrap="wrap">
             <Button
               fontSize="xs"
-              bg="#000000"
+              bg="#170D27"
               borderRadius="10px"
-              border="1px solid #FF6B00"
-              _hover={{ bg: "#1A1A1A" }}
+              border="1px solid #271E37"
+              _hover={{ bg: "#271E37" }}
               color="#fff"
               h={8}
               onClick={() => {
@@ -89,14 +85,14 @@ const SplitTextDemo = () => {
                 forceRerender();
               }}
             >
-              Split Type <Text color={"#FF6B00"}>&nbsp;{splitType}</Text>
+              Split Type <Text color={"#a1a1aa"}>&nbsp;{splitType}</Text>
             </Button>
             <Button
               fontSize="xs"
-              bg="#000000"
+              bg="#170D27"
               borderRadius="10px"
-              border="1px solid #FF6B00"
-              _hover={{ bg: "#1A1A1A" }}
+              border="1px solid #271E37"
+              _hover={{ bg: "#271E37" }}
               color="#fff"
               h={8}
               onClick={() => {
@@ -110,7 +106,7 @@ const SplitTextDemo = () => {
                 forceRerender();
               }}
             >
-              Ease: <Text color={"#FF6B00"}>&nbsp;{ease}</Text>
+              Ease: <Text color={"#a1a1aa"}>&nbsp;{ease}</Text>
             </Button>
           </Flex>
 

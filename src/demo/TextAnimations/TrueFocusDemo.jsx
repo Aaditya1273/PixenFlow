@@ -24,13 +24,14 @@ import { trueFocus } from '../../constants/code/TextAnimations/trueFocusCode';
 
 const TrueFocusDemo = () => {
   const [manualMode, setManualMode] = useState(false);
+  const [text, setText] = useState("Stay focused!");
   const [blurAmount, setBlurAmount] = useState(5);
   const [animationDuration, setAnimationDuration] = useState(0.5);
   const [pauseBetweenAnimations, setPauseBetweenAnimations] = useState(1);
   const [borderColor, setBorderColor] = useState("#5227FF");
 
   const config = {
-    sentence: 'True Focus',
+    sentence: text,
     manualMode,
     blurAmount,
     borderColor,

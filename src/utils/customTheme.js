@@ -21,19 +21,19 @@ const tabsRecipe = defineSlotRecipe({
   base: {
     trigger: {
       flex: "0 0 auto",
-      bg: "#000000",
+      bg: "#060010",
       borderRadius: "10px",
       fontSize: "14px",
-      border: "1px solid #FF6B00",
+      border: "1px solid #392e4e",
       h: 9,
       px: "1rem",
       transition: "background-color .3s",
 
-      _hover: { bg: "#1A1A1A" },
+      _hover: { bg: "#271E37" },
 
       "&[data-state='active']": {
         color: "#fff",
-        bg: "#FF6B00",
+        bg: "#170D27",
       },
     },
   },
@@ -43,9 +43,9 @@ export const toastStyles = {
   style: {
     fontSize: "12px",
     borderRadius: "0.75rem",
-    border: "1px solid #FF6B00",
+    border: "1px solid #392e4e",
     color: "#fff",
-    backgroundColor: "#000000",
+    backgroundColor: "#060010",
   },
 };
 
@@ -60,7 +60,7 @@ export const customTheme = createSystem(defaultConfig, {
       "html, body": {
         minHeight: "100vh",
         fontFamily: '"Figtree", sans-serif',
-        backgroundColor: "#000000",
+        backgroundColor: "#060010",
       },
     },
   },
@@ -68,12 +68,12 @@ export const customTheme = createSystem(defaultConfig, {
   components: {
     Slider: {
       baseStyle: {
-        thumb: { bg: "#FF6B00", _focus: { boxShadow: "none" } },
+        thumb: { bg: "#fff", _focus: { boxShadow: "none" } },
       },
       variants: {
         solid: {
-          track: { bg: "#1A1A1A" },
-          filledTrack: { bg: "#FF6B00" },
+          track: { bg: "#271E37" },
+          filledTrack: { bg: "#fff" },
         },
       },
       defaultProps: { variant: "solid" },
@@ -81,10 +81,10 @@ export const customTheme = createSystem(defaultConfig, {
     Switch: {
       baseStyle: {
         track: {
-          bg: "#1A1A1A",
-          _checked: { bg: "#FF6B00" },
-          _focus: { boxShadow: "0 0 0 3px #1A1A1A" },
-          _active: { bg: "#FF6B00" },
+          bg: "#271E37",
+          _checked: { bg: "#5227FF" },
+          _focus: { boxShadow: "0 0 0 3px #271E37" },
+          _active: { bg: "#5227FF" },
         },
         thumb: {
           _checked: { bg: "white" },

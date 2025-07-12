@@ -17,6 +17,7 @@ import { fallingText } from "../../constants/code/TextAnimations/fallingTextCode
 const FallingTextDemo = () => {
   const [gravity, setGravity] = useState(0.56);
   const [mouseConstraintStiffness, setMouseConstraintStiffness] = useState(0.9);
+  const [text, setText] = useState("Dropping in style!");
   const [trigger, setTrigger] = useState("hover");
 
   const [key, forceRerender] = useForceRerender();
@@ -98,7 +99,7 @@ const FallingTextDemo = () => {
           <FallingText
             key={key}
             text={`Pixen Flow is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
-            highlightWords={["Pixen", "Flow", "animated", "components", "simplify"]}
+            highlightWords={["React", "Bits", "animated", "components", "simplify"]}
             highlightClass="highlighted"
             trigger={trigger}
             gravity={gravity}

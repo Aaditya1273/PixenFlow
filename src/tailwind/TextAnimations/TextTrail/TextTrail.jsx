@@ -109,8 +109,8 @@ const TextTrail = ({
   rgbPersistFactor = 0.98,
   alphaPersistFactor = 0.95,
   animateColor = false,
-  startColor = "#ffffff",
-  textColor = "#ffffff",
+  startColor = "#FFA500",
+  textColor = "#FFA500",
   backgroundColor = 0x271e37,
   colorCycleInterval = 3000,
   supersample = 2,
@@ -195,9 +195,9 @@ const TextTrail = ({
       ctx.clearRect(0, 0, max, max);
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
-      ctx.shadowColor = "rgba(255,255,255,0.3)";
+      ctx.shadowColor = "rgba(255, 165, 0, 0.3)";
       ctx.shadowBlur = 2;
-      ctx.fillStyle = "#fff";
+      ctx.fillStyle = "#FFA500";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 

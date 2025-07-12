@@ -3,6 +3,7 @@
   height: 100%;
   overflow: hidden;
   cursor: grab;
+  color: #FFA500;
 }
 
 .circular-gallery:active {

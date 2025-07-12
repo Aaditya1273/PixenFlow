@@ -6,7 +6,7 @@ export function LanguageProvider({ children }) {
   const [languagePreset, setLanguagePreset] = useState(null);
 
   useEffect(() => {
-    const language = localStorage.getItem('preferredLanguage') || 'JS';
+    const language = localStorage.getItem('preferredLanguage') || 'TS';
     setLanguagePreset(language);
   }, [])
 

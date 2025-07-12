@@ -15,7 +15,7 @@ export const curvedLoop = {
 
 // With custom props
 <CurvedLoop 
-  marqueeText="Be ✦ Creative ✦ With ✦ Pixen ✦ Flow ✦"
+  marqueeText="Be ✦ Creative ✦ With ✦ Pixen ✦ Flow ✦ Components ✦"
   speed={3}
   curveAmount={500}
   direction="right"

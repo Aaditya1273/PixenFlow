@@ -37,9 +37,9 @@
   font-size: 3.6rem;
   font-weight: 600;
   letter-spacing: -2px;
-  color: #fff;
+  color: #FFA500;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #fff 0%, #8660fa 20%, #a855f7 40%, #8400ff 60%, #a855f7 80%, #fff 100%);
+  background: linear-gradient(135deg, #FFA500 0%, #8660fa 20%, #a855f7 40%, #8400ff 60%, #a855f7 80%, #FFA500 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -186,7 +186,7 @@
   margin: 4em 0 5em;
   width: 80%;
   height: 1px;
-  background: linear-gradient(to right, transparent, #ffffff7d, transparent);
+  background: linear-gradient(to right, transparent, #FFA5007d, transparent);
 }
 
 @media (max-width: 1024px) {

@@ -11,11 +11,11 @@ export const decryptedText = {
   usage: `import DecryptedText from './DecryptedText';
 
 {/* Example 1: Defaults (hover to decrypt) */}
-<DecryptedText text="Hover me!" />
+<DecryptedText text="Unleash the Power!" />
 
 {/* Example 2: Customized speed and characters */}
 <DecryptedText
-text="Customize me"
+text="Get Ready to Code Like a Pro!"
 speed={100}
 maxIterations={20}
 characters="ABCD1234!?"

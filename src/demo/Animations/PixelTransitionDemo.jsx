@@ -75,6 +75,7 @@ const propData = [
 ];
 
 const PixelTransitionDemo = () => {
+  const [text, setText] = useState("Pixel perfect magic!");
   const [gridSize, setGridSize] = useState(8);
   const [pixelColor, setPixelColor] = useState("#ffffff");
   const [animationStepDuration, setAnimationStepDuration] = useState(0.4);

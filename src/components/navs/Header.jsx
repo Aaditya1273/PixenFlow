@@ -23,7 +23,7 @@ import { useDeviceOS } from "react-haiku";
 import { useSearch } from "../context/SearchContext/useSearch";
 import { useLanguage } from "../context/LanguageContext/useLanguage";
 
-import Logo from "../../assets/logos/new-logo.svg";
+
 import FadeContent from "../../content/Animations/FadeContent/FadeContent";
 
 const Header = () => {
@@ -96,9 +96,7 @@ const Header = () => {
   return (
     <Box zIndex={100} className="main-nav">
       <Flex className="nav-items" h={20} alignItems="center" justifyContent="space-between" px={4}>
-        <RouterLink to="/" className="logo">
-          <Image src={Logo} alt="Logo" />
-        </RouterLink>
+
 
         <IconButton
           aria-label="Open Menu"
@@ -129,7 +127,7 @@ const Header = () => {
               onClick={toggleSearch}
             >
               <Icon as={FiSearch} boxSize={4} color="#392e4e" />
-              <Text mr={8} color="#a6a6a6">Search Docs</Text>
+              <Text mr={8} color="#a6a6a6">Search Pixels</Text>
               {os === "macOS" ? <Kbd fontSize="10px" px={2} borderRadius="50px"><Icon as={FiCommand} boxSize={2} mr={1} /> K</Kbd> : <Kbd fontSize="10px" px={2} borderRadius="50px">CTRL K</Kbd>}
             </Flex>
           </FadeContent>
@@ -156,7 +154,7 @@ const Header = () => {
                   mb={6}
                   borderBottom="1px solid #ffffff1c"
                 >
-                  <Image src={Logo} alt="Logo" h="25px" />
+
                   <IconButton
                     aria-label="Close Menu"
                     icon={<Icon as={FiStopCircle} boxSize={4} />}

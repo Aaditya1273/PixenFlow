@@ -184,7 +184,7 @@ class AsciiFilter {
 }
 
 class CanvasTxt {
-  constructor(txt, { fontSize = 200, fontFamily = 'Arial', color = '#fdf9f3' } = {}) {
+  constructor(txt, { fontSize = 200, fontFamily = 'Arial', color = '#FFA500' } = {}) {
     this.canvas = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
     this.txt = txt;
@@ -399,7 +399,7 @@ export default function ASCIIText({
   text = 'David!',
   asciiFontSize = 8,
   textFontSize = 200,
-  textColor = '#fdf9f3',
+  textColor = '#FFA500',
   planeBaseHeight = 8,
   enableWaves = true
 }) {

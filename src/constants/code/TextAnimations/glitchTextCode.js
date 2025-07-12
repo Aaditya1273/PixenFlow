@@ -16,7 +16,7 @@ export const glitchText = {
   enableOnHover={true}
   className='custom-class'
 >
-  pixenflow
+  reactbits
 </GlitchText>`,
   code,
   css,

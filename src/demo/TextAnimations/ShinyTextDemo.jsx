@@ -13,6 +13,7 @@ import { shinyText } from '../../constants/code/TextAnimations/shinyTextCode';
 
 const ShinyTextDemo = () => {
   const [speed, setSpeed] = useState(3);
+  const [text, setText] = useState("Shine bright, code right!");
 
   const propData = [
     {

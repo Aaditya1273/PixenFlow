@@ -17,7 +17,7 @@ import CurvedLoop from "../../content/TextAnimations/CurvedLoop/CurvedLoop";
 const CurvedLoopDemo = () => {
   const [key, forceRerender] = useForceRerender();
 
-    const [marqueeText, setMarqueeText] = useState("Be ✦ Creative ✦ With ✦ Pixen ✦ Flow ✦");
+  const [marqueeText, setMarqueeText] = useState("Loop de loop!");
   const [speed, setSpeed] = useState(2);
   const [curveAmount, setCurveAmount] = useState(400);
   const [interactive, setInteractive] = useState(true);

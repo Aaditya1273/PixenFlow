@@ -95,7 +95,7 @@ const Testimonials = () => {
         <div className="testimonials-header">
           <h3 className="testimonials-title">Loved by devs worldwide</h3>
           <p className="testimonials-subtitle">
-            See what developers are saying about React Bits
+            See what developers are saying about Pixen Flow
           </p>
         </div>
 

@@ -5,15 +5,15 @@ import { FiCode, FiEye, FiHeart, FiTerminal } from "react-icons/fi";
 
 const TAB_STYLE_PROPS = {
   flex: "0 0 auto",
-  border: "1px solid #FF6B00",
+  border: "1px solid #392e4e",
   borderRadius: "10px",
   fontSize: "14px",
   h: 9,
   px: 4,
   color: "#ffffff",
   justifyContent: "center",
-  _hover: { bg: "#1A1A1A" },
-  _selected: { bg: "#FF6B00", color: "#FFFFFF" },
+  _hover: { bg: "#271E37" },
+  _selected: { bg: "#170D27", color: "#B19EEF" },
 };
 
 const TabbedLayout = ({ children, className }) => {

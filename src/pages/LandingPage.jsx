@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import Footer from "../components/landing/Footer/Footer";
 import PlasmaWaveV2 from "../components/landing/PlasmaWave/PlasmaWaveV2";
 import Hero from "../components/landing/Hero/Hero";
+import Aurora from "../components/landing/Aurora/Aurora";
 import heroImage from "../assets/common/hero.webp";
 
-import "../css/landing.css";
 
 const LandingPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -23,7 +23,7 @@ const LandingPage = () => {
     <section className="landing-wrapper">
       <title>Pixen Flow - Animated UI Components For React</title>
 
-      {isMobile && (
+      {isMobile ? (
         <div className="mobile-hero-background-container">
           <img
             src={heroImage}
@@ -31,9 +31,14 @@ const LandingPage = () => {
             className="mobile-hero-background-image"
           />
         </div>
+      ) : (
+        <Aurora 
+          colorStops={["#5227FF", "#ff8c00", "#5227FF"]} 
+          amplitude={1.2} 
+          blend={0.6}
+        />
       )}
 
-      <PlasmaWaveV2 yOffset={-300} xOffset={100} rotationDeg={-30} />
       <Hero />
       <Footer />
     </section>

@@ -15,6 +15,7 @@ import { scrollFloat } from "../../constants/code/TextAnimations/scrollFloatCode
 
 const ScrollFloatDemo = () => {
   const containerRef = useRef(null);
+  const [text, setText] = useState("Float on by!");
   const [stagger, setStagger] = useState(0.03);
   const [duration, setDuration] = useState(1);
 
@@ -108,7 +109,7 @@ const ScrollFloatDemo = () => {
           <Text textAlign="center" color='#271E37' fontSize="clamp(4rem, 6vw, 4rem)" fontWeight={900} position="absolute" top='50%' transform='translateY(-50%)'>Scroll Down</Text>
           <Box position="relative" pt={1600} pb={600} px='3rem'>
             <ScrollFloat stagger={stagger} animationDuration={duration} key={key} scrollContainerRef={containerRef}>
-              pixenflow
+              Float on by!
             </ScrollFloat>
           </Box>
         </Box>

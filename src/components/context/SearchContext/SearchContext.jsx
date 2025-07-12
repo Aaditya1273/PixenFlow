@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-import SearchDialog from '../../common/Misc/SearchDialog';
 
 export const SearchContext = createContext();
 
@@ -12,7 +11,6 @@ export function SearchProvider({ children }) {
   return (
     <SearchContext.Provider value={{ openSearch, closeSearch, toggleSearch, isSearchOpen }}>
       {children}
-      <SearchDialog isOpen={isSearchOpen} onClose={closeSearch} />
     </SearchContext.Provider>
   );
 }

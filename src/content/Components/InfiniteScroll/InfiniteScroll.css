@@ -38,7 +38,7 @@
 }
 
 .infinite-scroll-item {
-  --accent-color: #ffffff;
+  --accent-color: #FFA500;
   border-radius: 15px;
   display: flex;
   align-items: center;

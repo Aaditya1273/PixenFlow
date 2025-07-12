@@ -9,7 +9,7 @@ const StartBuilding = () => {
           <h2 className="start-building-title">Start exploring Pixen Flow</h2>
           <p className="start-building-subtitle">Animations, components, backgrounds - it&apos;s all here</p>
 
-          <Link to="/text-animations/split-text" className="start-building-button">Browse Components</Link>
+          <Link to="/text-animations/split-text" className="start-building-button">Explore Components</Link>
         </div>
       </div>
     </section>

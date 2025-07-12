@@ -14,6 +14,7 @@ import { useState } from "react";
 import PreviewSlider from "../../components/common/Preview/PreviewSlider";
 
 const GlitchTextDemo = () => {
+  const [text, setText] = useState("Glitch in the matrix!");
   const [speed, setSpeed] = useState(1);
   const [enableShadows, setEnableShadows] = useState(true);
   const [enableOnHover, setEnableOnHover] = useState(false);
@@ -63,7 +64,7 @@ const GlitchTextDemo = () => {
             enableShadows={enableShadows}
             enableOnHover={enableOnHover}
           >
-            {enableOnHover ? "Hover Me" : "pixenflow"}
+            {enableOnHover ? "Hover Me" : "Glitch in the matrix!"}
           </GlitchText>
         </Box>
 

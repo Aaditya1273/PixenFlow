@@ -26,15 +26,11 @@ import {
   memo,
   useEffect,
 } from "react";
-import {
-  CATEGORIES,
-  NEW,
-  UPDATED
-} from "../../constants/Categories";
+import { CATEGORIES, NEW, UPDATED } from "../../constants/Categories";
 import { componentMap } from "../../constants/Components";
 import { useSearch } from "../context/SearchContext/useSearch";
 import { useTransition } from "../../hooks/useTransition";
-import Logo from "../../assets/logos/new-logo.svg";
+
 
 const HOVER_TIMEOUT_DELAY = 150;
 const ICON_BUTTON_STYLES = {
@@ -213,7 +209,9 @@ const Sidebar = () => {
           gap="1em"
         >
           <Link to="/">
-            <Image src={Logo} h="32px" alt="React Bits logo" />
+            <Flex align="center" gap={2}>
+
+            </Flex>
           </Link>
 
           <Flex gap={2}>
@@ -260,7 +258,9 @@ const Sidebar = () => {
             >
               <Flex align="center" justify="space-between" w="100%">
                 <Link to="/">
-                  <Image src={Logo} alt="Logo" h="28px" />
+                  <Flex align="center" gap={2}>
+
+                  </Flex>
                 </Link>
                 <IconButton
                   {...ICON_BUTTON_STYLES}
@@ -322,7 +322,7 @@ const Sidebar = () => {
         as="nav"
         ref={sidebarContainerRef}
         position="fixed"
-        top="57px"
+        top="0"
         h="100vh"
         w={{ base: 0, md: 40 }}
         p={5}
@@ -330,6 +330,10 @@ const Sidebar = () => {
         display={{ base: "none", md: "block" }}
         className={`sidebar ${isScrolledToBottom ? 'sidebar-no-fade' : ''}`}
       >
+        <Flex align="center" gap={2} mb={5}>
+
+        </Flex>
+
         <Box ref={sidebarRef} position="relative">
           <Box
             position="absolute"

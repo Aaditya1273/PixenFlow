@@ -9,9 +9,18 @@
   justify-content: space-between;
   width: 100vw;
   padding: 0 4em;
-  height: 160px;
+  height: 100px;
   margin: 0 auto;
-  background: linear-gradient(to bottom, #000000, transparent);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7) 50%, transparent);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.header-scrolled {
+  height: 80px;
+  background: rgba(10, 4, 20, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
@@ -26,7 +35,8 @@
 .nav-cta-group {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .logo {
@@ -35,42 +45,11 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   transition: transform 0.3s ease;
 }
 
 .logo:hover svg {
-  transform: rotate(180deg);
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  white-space: nowrap;
-  background: linear-gradient(45deg, #FF6B00, #FF4500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-}
-
-.logo-text::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 3px;
-  bottom: -4px;
-  left: 0;
-  background: linear-gradient(45deg, #FF6B00, #FF4500);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-  box-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
-}
-
-.logo:hover .logo-text::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+  transform: rotate(15deg);
 }
 
 .logo::before {
@@ -91,64 +70,86 @@
 }
 
 .logo svg {
-  height: 40px;
-  width: auto;
+  height: 60px;
+  width: 150px;
   position: relative;
   z-index: 2;
   transition: transform 0.4s ease-in-out;
 }
 
 .landing-nav-items {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   color: #fff;
   height: 60px;
-  padding: 0 2.4rem 0 calc(2.4rem + 6px);
+  padding: 0 2rem;
   border-radius: 50px;
-  border: 1px solid rgba(255, 107, 0, 0.3);
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 8px 32px 0 rgba(255, 107, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  margin-right: 1.5rem;
 }
 
 .nav-link {
   position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  color: inherit;
-  font-weight: 400;
-  opacity: 0.6;
-  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
   padding: 0.5rem 0;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-.active-link {
-  opacity: 1;
+  color: #fff;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: linear-gradient(90deg, #ff8c00, #ff5e00);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.nav-link:hover::after {
   width: 100%;
-  transform: scaleX(0);
-  height: 3px;
-  bottom: -2px;
-  left: 0;
-  background: #FF6B00;
-  box-shadow: 0 0 8px rgba(255, 107, 0, 0.6), 0 0 12px rgba(255, 107, 0, 0.4);
-  transition: transform 0.3s ease-out;
+  opacity: 1;
 }
 
-.nav-link:hover::after, .active-link::after {
-  transform: scaleX(1);
+.active-link {
+  color: #fff;
 }
 
-.active-link::before {
-  content: none;
+.active-link::after {
+  width: 100%;
+  opacity: 1;
+}
+
+.header-cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #ff8c00, #ff5e00);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.header-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
 }
 
 /* Mobile Navigation Toggle */
@@ -208,6 +209,31 @@
     width: 14px;
     height: 14px;
     margin-right: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1.5rem;
+    height: 80px;
+  }
+  
+  .header-container {
+    width: 100%;
+  }
+  
+  .landing-nav-items {
+    display: none;
+  }
+  
+  .header-cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .logo svg {
+    height: 50px;
+    width: 120px;
   }
 }
 

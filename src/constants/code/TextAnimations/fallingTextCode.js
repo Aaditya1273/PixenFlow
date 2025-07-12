@@ -16,7 +16,7 @@ export const fallingText = {
   
 <FallingText
   text={\`Pixen Flow is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.\`}
-  highlightWords={["Pixen", "Flow", "animated", "components", "simplify"]}
+  highlightWords={["React", "Bits", "animated", "components", "simplify"]}
   highlightClass="highlighted"
   trigger="hover"
   backgroundColor="transparent"

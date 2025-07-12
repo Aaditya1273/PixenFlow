@@ -111,7 +111,7 @@ const propData = [
 ];
 
 const TextPressureDemo = () => {
-  const [text, setText] = useState('Hello!');
+  const [text, setText] = useState("Feel the impact!");
   const [flex, setFlex] = useState(true);
   const [alpha, setAlpha] = useState(false);
   const [stroke, setStroke] = useState(false);
