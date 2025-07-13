@@ -50,14 +50,14 @@ const DisplayHeader = ({ activeItem }) => {
             </Link>
             <Link 
               className={`nav-link ${activeItem === 'docs' ? 'active-link' : ''}`} 
-              to="/text-animations/split-text"
+              to="/text-animations/text-devider"
             >
               Components
             </Link>
             {/* Removing the Showcase link */}
           </nav>
           
-          <Link to="/text-animations/split-text" className="header-cta-button">
+          <Link to="/text-animations/text-devider" className="header-cta-button">
             Get Started
           </Link>
         </div>

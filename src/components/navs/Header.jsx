@@ -166,7 +166,7 @@ const Header = () => {
 
                 <Flex direction="column" px={6} gap={2}>
                   <Text fontWeight="bold">Useful Links</Text>
-                  <RouterLink to="/text-animations/split-text" onClick={onClose}>
+                  <RouterLink to="/text-animations/text-devider" onClick={onClose}>
                     Docs
                   </RouterLink>
 

@@ -29,7 +29,9 @@ const CategoryPage = () => {
       <title>{`Pixen Flow - ${decodedLabel}`}</title>
 
       <Box className="page-transition-fade" style={{ opacity }}>
-        <h2 className='sub-category'>{decodedLabel}</h2>
+        <Box className="header-container" width="100%" display="flex" justifyContent="space-between" alignItems="center">
+          <h2 className='sub-category'>{decodedLabel}</h2>
+        </Box>
 
         {isLoading
           ? <SkeletonLoader />

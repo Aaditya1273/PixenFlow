@@ -1,13 +1,13 @@
 // Highlighted sidebar items
 export const NEW = ['Silk', 'Scramble Text', 'Dot Grid', 'Beams', 'Chroma Grid', 'Glare Hover', 'Profile Card', 'Card Swap', 'Model Viewer', 'Fluid Glass', 'Cubes', 'Masonry', 'Text Trail', 'Curved Loop'];
-export const UPDATED = ['Split Text', 'Star Border'];
+export const UPDATED = ['Text Devider', 'Star Border'];
 
 // Used for main sidebar navigation
 export const CATEGORIES = [
   {
     name: 'Text Animations',
     subcategories: [
-      'Split Text',
+      'Text Devider',
       'Blur Text',
       'Circular Text',
       'Shiny Text',

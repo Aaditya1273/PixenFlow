@@ -59,7 +59,7 @@ const SplitTextDemo = () => {
             ease={ease}
             splitType={splitType}
             threshold={threshold}
-            className="split-text-demo"
+            className="text-devider-demo"
             onLetterAnimationComplete={showCallback ? () => toast("✅ Animation Finished!") : undefined}
           />
         </Box>

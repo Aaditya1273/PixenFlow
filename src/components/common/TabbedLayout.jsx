@@ -39,20 +39,18 @@ const TabbedLayout = ({ children, className }) => {
       className={className}
     >
       <Tabs.List w="100%">
-        <Flex gap={2} justifyContent="space-between" alignItems="flex-start" w="100%" wrap="wrap">
-          <Flex gap={2} wrap="wrap" minW="0" flex="1">
-            <Tabs.Trigger value="preview" {...TAB_STYLE_PROPS}>
-              <Icon as={FiEye} /> Preview
-            </Tabs.Trigger>
+        <Flex gap={2} justifyContent="flex-start" alignItems="center" w="100%">
+          <Tabs.Trigger value="preview" {...TAB_STYLE_PROPS}>
+            <Icon as={FiEye} /> Preview
+          </Tabs.Trigger>
 
-            <Tabs.Trigger value="code" {...TAB_STYLE_PROPS}>
-              <Icon as={FiCode} /> Code
-            </Tabs.Trigger>
+          <Tabs.Trigger value="code" {...TAB_STYLE_PROPS}>
+            <Icon as={FiCode} /> Code
+          </Tabs.Trigger>
 
-            <Tabs.Trigger value="cli" {...TAB_STYLE_PROPS} className="cli-tab">
-              <Icon as={FiTerminal} /> CLI
-            </Tabs.Trigger>
-          </Flex>
+          <Tabs.Trigger value="cli" {...TAB_STYLE_PROPS} className="cli-tab">
+            <Icon as={FiTerminal} /> CLI
+          </Tabs.Trigger>
 
           {/* <Tabs.Trigger
             className="contribute-tab"

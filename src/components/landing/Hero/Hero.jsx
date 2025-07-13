@@ -79,7 +79,7 @@ const Hero = () => {
           />
 
           <div className="hero-buttons">
-            <Link to={"/text-animations/split-text"} className="landing-button primary-button">
+            <Link to={"/text-animations/text-devider"} className="landing-button primary-button">
               <span>Explore Components</span>
               <div className="button-arrow-circle">
                 <svg

@@ -20,7 +20,7 @@ const animations = {
 };
 
 const textAnimations = {
-  'split-text': () => import("../demo/TextAnimations/SplitTextDemo"),
+  'text-devider': () => import("../demo/TextAnimations/SplitTextDemo"),
   'blur-text': () => import("../demo/TextAnimations/BlurTextDemo"),
   'shiny-text': () => import("../demo/TextAnimations/ShinyTextDemo"),
   'gradient-text': () => import("../demo/TextAnimations/GradientTextDemo"),
@@ -42,6 +42,10 @@ const textAnimations = {
   'scramble-text': () => import("../demo/TextAnimations/ScrambledTextDemo"),
   'text-trail': () => import("../demo/TextAnimations/TextTrailDemo"),
   'curved-loop': () => import("../demo/TextAnimations/CurvedLoopDemo"),
+};
+
+const layout = {
+  'responsive-header': () => import("../demo/Layout/ResponsiveHeaderDemo"),
 };
 
 const components = {
@@ -103,4 +107,5 @@ export const componentMap = {
   ...textAnimations,
   ...components,
   ...backgrounds,
+  ...layout,
 };

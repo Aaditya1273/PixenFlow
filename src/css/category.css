@@ -77,12 +77,23 @@
   margin: 0;
 }
 
+.category-page .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+
 .category-page .sub-category {
-  margin-bottom: 0.5em;
+  margin-bottom: 0;
   line-height: 1em;
   font-size: 4.5rem;
   color: #FFA500;
   font-weight: 900;
+  display: inline-block;
 }
 
 .code-highlighter {
@@ -112,13 +123,34 @@
   justify-content: center;
 }
 
+/* Styling for the tabs in the header */
+.category-page .page-transition-fade > div > [role="tablist"] {
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 0.5rem;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure tabs are properly aligned */
+.category-page [role="tablist"] > div {
+  gap: 0.5rem !important;
+}
+
+/* Style the tab triggers */
+.category-page [role="tablist"] [role="tab"] {
+  transition: all 0.3s ease;
+}
 
 
-.split-text-demo,
+
+.text-devider-demo,
 .blur-text-demo {
   font-size: 6rem;
   font-weight: bolder;
   color: #FFA500;
+  line-height: 1.2;
 }
 
 .scrambled-text-demo {
@@ -346,10 +378,11 @@
     font-size: 3rem;
   }
 
-  .split-text-demo,
+  .text-devider-demo,
   .blur-text-demo {
     font-size: 2rem;
     font-weight: bolder;
+    line-height: 1.2;
   }
 
   .decrypted-text {
