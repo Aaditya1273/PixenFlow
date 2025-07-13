@@ -118,7 +118,7 @@ const TextPressureDemo = () => {
   const [width, setWidth] = useState(true);
   const [weight, setWeight] = useState(true);
   const [italic, setItalic] = useState(true);
-  const [textColor, setTextColor] = useState('#ffffff');
+  const [textColor, setTextColor] = useState('#FFA500');
   const [strokeColor, setStrokeColor] = useState('#5227FF');
 
   const [key, forceRerender] = useForceRerender();
