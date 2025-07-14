@@ -21,7 +21,7 @@ const BallpitDemo = () => {
   const [friction, setFriction] = useState(0.9975);
   const [wallBounce, setWallBounce] = useState(0.95);
   const [followCursor, setFollowCursor] = useState(false);
-  const colors = [0xffffff, 0x000000, 0x5227FF];
+  const colors = [0xFFC107, 0x000000, 0xFFA500];
 
   const [key, forceRerender] = useForceRerender();
 
@@ -127,9 +127,9 @@ const BallpitDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={500} maxH={500} overflow="hidden">
+        <Box position="relative" className="demo-container" minH={500} maxH={500} overflow="hidden" bg="#333333">
           <RefreshButton onClick={forceRerender} />
-          <Text fontSize='200px' fontWeight={900} color="#271E37" position="absolute" zIndex={0}>Balls.</Text>
+          <Text fontSize='200px' fontWeight={900} color="#FFA500" position="absolute" zIndex={0} opacity={0.2}>Balls.</Text>
           <Ballpit
             className="ballpit-demo"
             key={key}
@@ -143,6 +143,7 @@ const BallpitDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSwitch
             title="Display Cursor"
             isChecked={followCursor}

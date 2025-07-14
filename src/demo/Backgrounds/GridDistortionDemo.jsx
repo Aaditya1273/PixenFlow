@@ -77,7 +77,7 @@ const GridDistortionDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={600} p={0} overflow="hidden" ref={containerRef}>
+        <Box position="relative" className="demo-container" h={600} p={0} overflow="hidden" ref={containerRef} bg="#333333">
           <GridDistortion
             key={key}
             imageSrc="https://picsum.photos/1920/1080?grayscale"
@@ -88,19 +88,20 @@ const GridDistortionDemo = () => {
             className="grid-distortion"
           />
 
-          <Text position="absolute" textAlign='center' fontSize="6rem" fontWeight={900} userSelect="none" mixBlendMode="difference">Distortion.</Text>
+          <Text position="absolute" textAlign='center' fontSize="6rem" fontWeight={900} userSelect="none" mixBlendMode="difference" color="#FFA500">Distortion.</Text>
 
           <Button
             position="absolute"
             fontSize="sm"
-            bg="#060010"
+            bg="black"
+            border="1px solid #FFA500"
             borderRadius="15px"
             px={6}
-            _active={{ backgroundColor: '#111' }}
-            _hover={{ backgroundColor: '#111' }}
+            _active={{ bg: 'black' }}
+            _hover={{ bg: 'black' }}
             right='2em'
             bottom='2em'
-            color="#fff"
+            color="#FFA500"
             h={16}
             onClick={() => {
               !isFullScreen ? enterFullScreen() : exitFullScreen()
@@ -111,6 +112,7 @@ const GridDistortionDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Grid Size"
             min={6}

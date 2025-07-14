@@ -14,7 +14,7 @@ import Dither from "../../content/Backgrounds/Dither/Dither";
 import { dither } from "../../constants/code/Backgrounds/ditherCode";
 
 const DitherDemo = () => {
-  const [colors, setColors] = useState([0.5, 0.5, 0.5]);
+  const [colors, setColors] = useState([1.0, 0.65, 0.0]);
   const [mouseRadius, setMouseRadius] = useState(0.3);
   const [colorNum, setColorNum] = useState(4);
   const [waveAmplitude, setWaveAmplitude] = useState(0.3);
@@ -84,7 +84,7 @@ const DitherDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden" bg="#333333">
           <Dither
             waveColor={colors}
             disableAnimation={disableAnimation}
@@ -98,9 +98,10 @@ const DitherDemo = () => {
         </Box>
 
         <Customize>
-          <Text fontSize="sm">Colors</Text>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
+          <Text fontSize="sm" style={{ color: '#FFA500' }}>Colors</Text>
           <Flex gap={4} wrap="wrap">
-            <Flex gap={4} align="center" mt={2} background="#170D27" px={4} borderRadius={16} position="relative">
+            <Flex gap={4} align="center" mt={2} background="#000000" px={4} borderRadius={16} position="relative">
               <PreviewSlider
                 min={0}
                 max={1}
@@ -118,7 +119,7 @@ const DitherDemo = () => {
               />
             </Flex>
 
-            <Flex gap={4} align="center" mt={2} background="#170D27" px={4} borderRadius={16} position="relative">
+            <Flex gap={4} align="center" mt={2} background="#000000" px={4} borderRadius={16} position="relative">
               <PreviewSlider
                 min={0}
                 max={1}
@@ -136,7 +137,7 @@ const DitherDemo = () => {
               />
             </Flex>
 
-            <Flex gap={4} align="center" mt={2} background="#170D27" px={4} borderRadius={16} position="relative">
+            <Flex gap={4} align="center" mt={2} background="#000000" px={4} borderRadius={16} position="relative">
               <PreviewSlider
                 min={0}
                 max={1}

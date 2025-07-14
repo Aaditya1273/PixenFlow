@@ -15,9 +15,9 @@ import { balatro } from "../../constants/code/Backgrounds/balatroCode";
 
 const BalatroDemo = () => {
   const [hideimage, setHideImage] = useState(false);
-  const [color1, setColor1] = useState("#DE443B");
-  const [color2, setColor2] = useState("#006BB4");
-  const [color3, setColor3] = useState("#162325");
+  const [color1, setColor1] = useState("#FFA500");
+  const [color2, setColor2] = useState("#FFC107");
+  const [color3, setColor3] = useState("#1a1a1a");
   const [rotate, setRotate] = useState(false);
   const [mouseInteraction, setMouseInteraction] = useState(true);
   const [pixelFilter, setPixelFilter] = useState(745.0);
@@ -106,7 +106,7 @@ const BalatroDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0}>
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0} bg="#333333">
           <Balatro
             color1={color1}
             color2={color2}
@@ -122,7 +122,7 @@ const BalatroDemo = () => {
         </Box>
 
         <Flex gap={4} align="center" mt={7} justifyContent='flex-end' position="absolute" right={0}>
-          <Text fontSize="sm">Hide Image</Text>
+          <Text fontSize="sm" style={{ color: '#FFA500' }}>Hide Image</Text>
           <PreviewSwitch
             isChecked={hideimage}
             onChange={(checked) => { setHideImage(checked); }}
@@ -130,8 +130,9 @@ const BalatroDemo = () => {
         </Flex>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Colors</Text>
+            <Text fontSize="sm" style={{ color: '#FFA500' }}>Colors</Text>
             <Input
               type="color"
               value={color1}

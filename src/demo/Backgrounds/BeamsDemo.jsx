@@ -16,7 +16,7 @@ const BeamsDemo = () => {
   const [beamWidth, setBeamWidth] = useState(3);
   const [beamHeight, setBeamHeight] = useState(30);
   const [beamNumber, setBeamNumber] = useState(20);
-  const [lightColor, setLightColor] = useState("#ffffff");
+  const [lightColor, setLightColor] = useState("#FFA500");
   const [speed, setSpeed] = useState(2);
   const [noiseIntensity, setNoiseIntensity] = useState(1.75);
   const [scale, setScale] = useState(0.2);
@@ -76,7 +76,7 @@ const BeamsDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0}>
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0} bg="#333333">
           <Beams
             beamWidth={beamWidth}
             beamHeight={beamHeight}
@@ -90,8 +90,9 @@ const BeamsDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <Flex align="center" gap={2}>
-            <Text fontSize="sm" mr={1}>Color:</Text>
+            <Text fontSize="sm" mr={1} style={{ color: '#FFA500' }}>Color:</Text>
             <Input
               type="color"
               value={lightColor}
