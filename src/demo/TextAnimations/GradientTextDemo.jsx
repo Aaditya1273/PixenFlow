@@ -55,9 +55,9 @@ const GradientTextDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <h2 className="demo-title-extra">Default</h2>
-        <Box position="relative" className="demo-container" minH={150}>
-          <Text fontSize={'2rem'} as='div'>
+        <h2 className="demo-title-extra" style={{ color: "#FFA500" }}>Default</h2>
+        <Box position="relative" className="demo-container" bg="#333333" minH={150}>
+          <Text fontSize={'2rem'} as='div' color="#FFA500">
             <GradientText
               colors={colors.split(',')}
               animationSpeed={speed}
@@ -68,9 +68,9 @@ const GradientTextDemo = () => {
           </Text>
         </Box>
 
-        <h2 className="demo-title-extra">Border Animation</h2>
-        <Box position="relative" className="demo-container" minH={150}>
-          <Text fontSize={'2rem'} as='div'>
+        <h2 className="demo-title-extra" style={{ color: "#FFA500" }}>Border Animation</h2>
+        <Box position="relative" className="demo-container" bg="#333333" minH={150}>
+          <Text fontSize={'2rem'} as='div' color="#FFA500">
             <GradientText
               colors={colors.split(',')}
               animationSpeed={speed}
@@ -106,12 +106,12 @@ const GradientTextDemo = () => {
               marginLeft="calc(2rem + 24px)"
               h="12px"
               borderRadius="md"
-              border="1px solid #271E37"
+              border="1px solid #FFA500"
             />
           </Flex>
         </Customize>
 
-        <p className="demo-extra-info" style={{ marginTop: "1rem" }}>
+        <p className="demo-extra-info" style={{ marginTop: "1rem", color: "#FFA500" }}>
           <FiInfo position="relative" /> For a smoother animation, the gradient should start and end with the same color.
         </p>
 
