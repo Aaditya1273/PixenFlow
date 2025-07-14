@@ -86,8 +86,8 @@ const CountUpDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <h2 className="demo-title-extra">Default</h2>
-        <Box position="relative" className="demo-container" minH={200}>
+        <h2 className="demo-title-extra" style={{ color: "#FFA500" }}>Default</h2>
+        <Box position="relative" className="demo-container" bg="#333333" minH={200} color="#FFA500">
           <CountUp
             key={keyDefault}
             from={0}
@@ -101,14 +101,15 @@ const CountUpDemo = () => {
           <RefreshButton onClick={forceRerenderDefault} />
         </Box>
 
-        <h2 className="demo-title-extra">Start Programatically</h2>
-        <Flex direction="column" justifyContent="center" alignItems="center" position="relative" className="demo-container" minH={200}>
+        <h2 className="demo-title-extra" style={{ color: "#FFA500" }}>Start Programatically</h2>
+        <Flex direction="column" justifyContent="center" alignItems="center" position="relative" className="demo-container" bg="#333333" minH={200} color="#FFA500">
           <Button
-            bg="#170D27"
+            bg="black"
             borderRadius="10px"
-            border="1px solid #271E37"
-            color="#fff"
+            border="1px solid #FFA500"
+            color="#FFA500"
             onClick={() => setStartCounting(true)}
+            _hover={{ bg: "#FFA500", color: "black" }}
           >
             Count to 500!
           </Button>
@@ -125,17 +126,17 @@ const CountUpDemo = () => {
           {startCounting && <RefreshButton onClick={forceRerenderProgramatically} />}
         </Flex>
 
-        <h2 className="demo-title-extra">With Gradient</h2>
-        <p className="demo-extra-info">
+        <h2 className="demo-title-extra" style={{ color: "#FFA500" }}>With Gradient</h2>
+        <p className="demo-extra-info" style={{ color: "#FFA500" }}>
           <Flex>
             <span>
               You can wrap the counter with other components such as&nbsp;
-              <Link style={{ display: 'inline', whiteSpace: 'nowrap' }} to='/text-animations/gradient-text/'>&lt;GradientText /&gt;</Link>
+              <Link style={{ display: 'inline', whiteSpace: 'nowrap', color: '#FFA500', textDecoration: 'underline' }} to='/text-animations/gradient-text/'>&lt;GradientText /&gt;</Link>
             </span>
           </Flex>
 
         </p>
-        <Flex direction="column" justifyContent="center" alignItems="center" position="relative" className="demo-container" minH={200}>
+        <Flex direction="column" justifyContent="center" alignItems="center" position="relative" className="demo-container" bg="#333333" minH={200}>
           <GradientText>
             <CountUp
               key={keyGradient}

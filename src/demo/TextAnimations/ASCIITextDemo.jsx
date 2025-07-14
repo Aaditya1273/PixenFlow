@@ -82,6 +82,7 @@ const ASCIITextDemo = () => {
         <Box
           position="relative"
           className="demo-container"
+          bg="#333333"
           minH={400}
           maxH={400}
           overflow="hidden"
@@ -94,6 +95,7 @@ const ASCIITextDemo = () => {
             asciiFontSize={asciiFontSize}
             textFontSize={250}
             planeBaseHeight={12}
+            textColor="#FFA500"
           />
         </Box>
 

@@ -95,7 +95,7 @@ const FallingTextDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Flex position="relative" className="demo-container" h={400} overflow="hidden" justifyContent="center" alignItems="center" p={0}>
+        <Flex position="relative" className="demo-container" bg="#333333" h={400} overflow="hidden" justifyContent="center" alignItems="center" p={0}>
           <FallingText
             key={key}
             text={`Pixen Flow is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
@@ -105,9 +105,10 @@ const FallingTextDemo = () => {
             gravity={gravity}
             fontSize="2rem"
             mouseConstraintStiffness={mouseConstraintStiffness}
+            backgroundColor="#333333"
           />
 
-          <Text color="#271E37" fontSize='4rem' fontWeight={900} position="absolute" zIndex={0} userSelect="none">
+          <Text color="#FFA500" opacity={0.1} fontSize='4rem' fontWeight={900} position="absolute" zIndex={0} userSelect="none">
             {trigger === "hover" ? "Hover Me" : trigger === "click" ? "Click Me" : "Auto Start"}
           </Text>
         </Flex>
