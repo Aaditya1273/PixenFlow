@@ -126,7 +126,7 @@ const TextPressureDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" bg='#060010' minH={400} maxH={450} overflow="hidden" mb={6}>
+        <Box position="relative" className="demo-container" bg='#333333' minH={400} maxH={450} overflow="hidden" mb={6}>
           <RefreshButton onClick={forceRerender} />
           <Box w="100%" h="100%">
             <TextPressure
