@@ -90,7 +90,7 @@ const CardSwapDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box className="demo-container" h={500} overflow="hidden" display="flex" flexDirection={{ base: "column", lg: "row" }} position="relative">
+        <Box className="demo-container" h={500} overflow="hidden" display="flex" flexDirection={{ base: "column", lg: "row" }} position="relative" bg="#333333">
           <Box
             pl={{ base: 0, lg: 0 }}
             w={{ base: "100%", lg: "50%" }}
@@ -110,6 +110,7 @@ const CardSwapDemo = () => {
               fontWeight={500}
               lineHeight={1.1}
               pl={{ base: 0, lg: '6rem' }}
+              color="#FFA500"
             >
               Card stacks have never{" "}
               <Box as="span" display={{ base: "inline", lg: "block" }}>
@@ -118,46 +119,36 @@ const CardSwapDemo = () => {
             </Text>
             <Text
               fontSize={{ base: "lg", lg: "xl" }}
-              mb={4}
-              fontWeight={400}
-              lineHeight={1.1}
-              color="#999"
+              color="#FFA500"
+              opacity={0.7}
               pl={{ base: 0, lg: '6rem' }}
             >
-              Just look at it go!
+              Animate your card stacks with a simple,
+              <Box as="span" display={{ base: "inline", lg: "block" }}>
+                intuitive API.
+              </Box>
             </Text>
           </Box>
-          <Box
-            w={{ base: "100%", lg: "50%" }}
-            h={{ base: "400px", lg: "100%" }}
-            position="relative"
-          >
-            <CardSwap
-              key={key}
-              cardDistance={cardDistance}
-              verticalDistance={verticalDistance}
-              delay={delay}
-              skewAmount={skewAmount}
-              easing={easing}
-              pauseOnHover={pauseOnHover}
-            >
+
+          <Box w={{ base: "100%", lg: "50%" }} h="100%" display="flex" justifyContent="center" alignItems="center">
+            <CardSwap key={key} cardDistance={cardDistance} verticalDistance={verticalDistance} delay={delay} skewAmount={skewAmount} easing={easing} pauseOnHover={pauseOnHover}>
               <Card customClass="one">
-                <Box borderBottom="1px solid #fff" bg="linear-gradient(to top, #271E37, #060606)">
-                  <Text m={2}>
+                <Box borderBottom="1px solid #FFA500" bg="#000000">
+                  <Text m={2} color="#FFA500">
                     <Icon as={FaCircle} mr={2} />
-                    Smooth
+                    Secure
                   </Text>
                 </Box>
                 <Box position="relative" p={2}>
                   <video autoPlay loop muted playsInline style={{ borderRadius: '15px' }}>
-                    <source src="https://cdn.dribbble.com/userupload/7053861/file/original-7956be57144058795db6bb24875bdab9.mp4" type="video/mp4" />
+                    <source src="https://cdn.dribbble.com/userupload/7078020/file/original-b071e9063d9e3ba86a85a61b9d5a7c42.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </Box>
               </Card>
               <Card customClass="two">
-                <Box borderBottom="1px solid #fff" bg="linear-gradient(to top, #271E37, #060606)">
-                  <Text m={2}>
+                <Box borderBottom="1px solid #FFA500" bg="#000000">
+                  <Text m={2} color="#FFA500">
                     <Icon as={FaCode} mr={2} />
                     Reliable
                   </Text>
@@ -170,8 +161,8 @@ const CardSwapDemo = () => {
                 </Box>
               </Card>
               <Card customClass="three">
-                <Box borderBottom="1px solid #fff" bg="linear-gradient(to top, #271E37, #060606)">
-                  <Text m={2}>
+                <Box borderBottom="1px solid #FFA500" bg="#000000">
+                  <Text m={2} color="#FFA500">
                     <Icon as={FaSliders} mr={2} />
                     Customizable
                   </Text>
@@ -188,6 +179,7 @@ const CardSwapDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSwitch
             title="Pause On Hover"
             isChecked={pauseOnHover}
@@ -247,11 +239,11 @@ const CardSwapDemo = () => {
 
           <Button
             fontSize="xs"
-            bg="#170D27"
+            bg="#000000"
             borderRadius="10px"
-            border="1px solid #271E37"
-            _hover={{ bg: "#271E37" }}
-            color="#fff"
+            border="1px solid #FFA500"
+            _hover={{ bg: "#111111" }}
+            color="#FFA500"
             h={8}
             onClick={() => {
               setEasing(easing === 'elastic' ? 'linear' : 'elastic');

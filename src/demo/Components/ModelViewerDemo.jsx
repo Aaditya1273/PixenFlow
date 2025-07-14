@@ -76,25 +76,20 @@ const ModelViewerDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0} display="flex" justifyContent="center" alignItems="center">
-          {isTextVisible && (
-            <Text
-              userSelect="none"
-              position="absolute"
-              top="50%"
-              left="6em"
-              transform="translate(-50%, -50%)"
-              fontSize="3rem"
-              whiteSpace="nowrap"
-              fontWeight="900"
-              color="white"
-              textAlign="center"
-              textShadow="0 0 10px rgba(255, 255, 255, 0.8)"
-              zIndex={1}
-              display={{ base: "none", md: "block" }}
-            >{textMap[selectedModel]}
-            </Text>
-          )}
+        <Box position="relative" className="demo-container" h={600} overflow="hidden" bg="#333333">
+          <Text
+            className={`demo-text ${isTextVisible ? 'visible' : ''}`}
+            position="absolute"
+            bottom="20px"
+            left="50%"
+            transform="translateX(-50%)"
+            zIndex={10}
+            color="#FFA500"
+            fontSize="1.2rem"
+            fontWeight="bold"
+          >
+            {textMap[selectedModel]}
+          </Text>
           <ModelViewer
             key={key}
             url={urlMap[selectedModel]}
@@ -115,6 +110,7 @@ const ModelViewerDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSelect
             title="Model"
             width={150}

@@ -29,7 +29,7 @@ const FlowingMenuDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={600} overflow="hidden" px={0} pt='100px' pb='100px'>
+        <Box position="relative" className="demo-container" h={600} overflow="hidden" px={0} pt='100px' pb='100px' bg="#333333">
           <FlowingMenu items={demoItems} />
         </Box>
 

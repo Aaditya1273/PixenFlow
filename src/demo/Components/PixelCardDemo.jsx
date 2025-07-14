@@ -71,10 +71,10 @@ const PixelCardDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={500} maxH={500} overflow="hidden">
+        <Box position="relative" className="demo-container" minH={500} maxH={500} overflow="hidden" bg="#333333">
           <PixelCard variant={selectedVariant}>
             <Flex w="100%" h="100%" position="absolute" justifyContent="center" alignItems="center">
-              <Text fontSize="3rem" userSelect="none" fontWeight={900} mixBlendMode="screen" color="#271E37">
+              <Text fontSize="3rem" userSelect="none" fontWeight={900} mixBlendMode="screen" color="#FFA500">
                 Hover Me.
               </Text>
             </Flex>
@@ -82,6 +82,7 @@ const PixelCardDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSelect
             title="Variant"
             options={options}

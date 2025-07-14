@@ -59,8 +59,8 @@ const InfiniteMenuDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={600} overflow="hidden" p={0}>
-          {isHidden && <Spinner size="lg" position="absolute" />}
+        <Box position="relative" className="demo-container" h={600} overflow="hidden" p={0} bg="#333333">
+          {isHidden && <Spinner size="lg" position="absolute" color="#FFA500" />}
           <Box h={600} overflow="hidden" w='100%' p={0} opacity={isHidden ? 0 : 1} transform={isHidden ? 'scale(5)' : 'scale(1)'} transition='1s ease'>
             <InfiniteMenu items={items} />
           </Box>

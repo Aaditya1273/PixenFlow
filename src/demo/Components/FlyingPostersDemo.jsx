@@ -77,7 +77,7 @@ const FlyingPostersDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={600} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={600} p={0} overflow="hidden" bg="#333333">
           <RefreshButton onClick={forceRerender} />
           <FlyingPosters
             key={key}
@@ -89,12 +89,13 @@ const FlyingPostersDemo = () => {
             cameraFov={cameraFov}
             cameraZ={cameraZ}
           />
-          <Text color="#271E37" zIndex={0} fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} position="absolute">
+          <Text color="#FFA500" zIndex={0} fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} position="absolute">
             Scroll.
           </Text>
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Plane Width"
             min={300}

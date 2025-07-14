@@ -40,9 +40,9 @@ const DecayCardDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333">
           <DecayCard>
-            <Text mixBlendMode='overlay'>Decay<br />Card</Text>
+            <Text mixBlendMode='overlay' color="#FFA500">Decay<br />Card</Text>
           </DecayCard>
         </Box>
 

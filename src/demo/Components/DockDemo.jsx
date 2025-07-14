@@ -85,12 +85,13 @@ const DockDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={400}>
-          <Text fontSize='2rem' fontWeight={900} color="#271E37">Try it out!</Text>
+        <Box position="relative" className="demo-container" minH={400} bg="#333333">
+          <Text fontSize='2rem' fontWeight={900} color="#FFA500">Try it out!</Text>
           <Dock key={key} items={items} panelHeight={panelHeight} baseItemSize={baseItemSize} magnification={magnification} />
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Background Height"
             min={30}

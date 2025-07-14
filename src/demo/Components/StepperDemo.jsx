@@ -105,7 +105,7 @@ const StepperDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333">
           <Stepper
             initialStep={step}
             onStepChange={(step) => {
@@ -124,24 +124,24 @@ const StepperDemo = () => {
             nextButtonText="Next"
           >
             <Step>
-              <Text color="#5227FF" fontSize='1.2rem' fontWeight={600}>Welcome to the Pixen Flow stepper!</Text>
-              <p>Check out the next step!</p>
+              <Text color="#FFA500" fontSize='1.2rem' fontWeight={600}>Welcome to the Pixen Flow stepper!</Text>
+              <p style={{ color: '#FFA500' }}>Check out the next step!</p>
             </Step>
 
             <Step>
-              <h2>Step 2</h2>
+              <h2 style={{ color: '#FFA500' }}>Step 2</h2>
               <img style={{ height: '100px', width: '100%', objectFit: 'cover', objectPosition: 'center -70px', borderRadius: '15px', marginTop: '1em' }} src="https://www.purrfectcatgifts.co.uk/cdn/shop/collections/Funny_Cat_Cards_640x640.png?v=1663150894" />
-              <p style={{ marginTop: '1em' }}>Custom step content!</p>
+              <p style={{ marginTop: '1em', color: '#FFA500' }}>Custom step content!</p>
             </Step>
 
             <Step>
-              <h2>How about an input?</h2>
-              <Input value={name} onChange={(e) => setName(e.target.value)} mt={2} placeholder="Your name?" />
+              <h2 style={{ color: '#FFA500' }}>How about an input?</h2>
+              <Input value={name} onChange={(e) => setName(e.target.value)} mt={2} placeholder="Your name?" bg="black" borderColor="#FFA500" color="#FFA500" _placeholder={{ color: 'rgba(255, 165, 0, 0.5)' }} />
             </Step>
 
             <Step>
-              <Text color="#5227FF" fontSize='1.2rem' fontWeight={600}>Final Step</Text>
-              <p>You made it!</p>
+              <Text color="#FFA500" fontSize='1.2rem' fontWeight={600}>Final Step</Text>
+              <p style={{ color: '#FFA500' }}>You made it!</p>
             </Step>
           </Stepper>
         </Box>

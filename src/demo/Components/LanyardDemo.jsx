@@ -51,13 +51,14 @@ const LanyardDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={600} p={0} overflow="hidden" bg="linear-gradient(180deg, #271E37 0%, #060010 100%)">
+        <Box position="relative" className="demo-container" h={600} p={0} overflow="hidden" bg="#333333">
           <RefreshButton onClick={forceRerender} />
-          <Text position="absolute" fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} color="#271E37">Drag It!</Text>
+          <Text position="absolute" fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} color="#FFA500">Drag It!</Text>
           <Lanyard key={key} position={[0, 0, cameraDistance]} gravity={stopGravity ? [0, 0, 0] : [0, -40, 0]} />
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Camera Distance"
             min={20}

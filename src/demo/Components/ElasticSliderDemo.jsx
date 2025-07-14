@@ -65,21 +65,21 @@ const ElasticSliderDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <h2 className="demo-title-extra">Default</h2>
-        <Box position="relative" className="demo-container" minH={200}>
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Default</h2>
+        <Box position="relative" className="demo-container" minH={200} bg="#333333">
           <ElasticSlider />
         </Box>
 
-        <h2 className="demo-title-extra">Steps</h2>
-        <Box position="relative" className="demo-container" minH={200}>
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Steps</h2>
+        <Box position="relative" className="demo-container" minH={200} bg="#333333">
           <ElasticSlider isStepped stepSize={10} />
         </Box>
 
-        <h2 className="demo-title-extra">Custom Values & Icons</h2>
-        <Box position="relative" className="demo-container" minH={200}>
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Custom Values & Icons</h2>
+        <Box position="relative" className="demo-container" minH={200} bg="#333333">
           <ElasticSlider
-            leftIcon={<Icon as={FaMinusCircle} />}
-            rightIcon={<Icon as={FaPlusCircle} />}
+            leftIcon={<Icon as={FaMinusCircle} color="#FFA500" />}
+            rightIcon={<Icon as={FaPlusCircle} color="#FFA500" />}
             startingValue={500}
             defaultValue={750}
             maxValue={1000}

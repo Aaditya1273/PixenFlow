@@ -16,16 +16,16 @@ const ProfileCardDemo = () => {
   const [showIcon, setShowIcon] = useState(true);
   const [showUserInfo, setShowUserInfo] = useState(true);
   const [showBehindGradient, setShowBehindGradient] = useState(true);
-  const [customBehindGradient, setCustomBehindGradient] = useState("radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(266,100%,90%,var(--card-opacity)) 4%,hsla(266,50%,80%,calc(var(--card-opacity)*0.75)) 10%,hsla(266,25%,70%,calc(var(--card-opacity)*0.5)) 50%,hsla(266,0%,60%,0) 100%),radial-gradient(35% 52% at 55% 20%,#00ffaac4 0%,#073aff00 100%),radial-gradient(100% 100% at 50% 50%,#00c1ffff 1%,#073aff00 76%),conic-gradient(from 124deg at 50% 50%,#c137ffff 0%,#07c6ffff 40%,#07c6ffff 60%,#c137ffff 100%)");
-  const [customInnerGradient, setCustomInnerGradient] = useState("linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)");
+  const [customBehindGradient, setCustomBehindGradient] = useState("radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(30,100%,90%,var(--card-opacity)) 4%,hsla(30,50%,80%,calc(var(--card-opacity)*0.75)) 10%,hsla(30,25%,70%,calc(var(--card-opacity)*0.5)) 50%,hsla(30,0%,60%,0) 100%),radial-gradient(35% 52% at 55% 20%,#FFA500c4 0%,#FFC10700 100%),radial-gradient(100% 100% at 50% 50%,#FFC107ff 1%,#FF8C0000 76%),conic-gradient(from 124deg at 50% 50%,#FF8C00ff 0%,#FFC107ff 40%,#FFC107ff 60%,#FF8C00ff 100%)");
+  const [customInnerGradient, setCustomInnerGradient] = useState("linear-gradient(145deg,hsla(30, 40%, 45%, 0.55) 0%,hsla(45, 60%, 70%, 0.27) 100%)");
 
   const [key, forceRerender] = useForceRerender()
 
   const generateRandomGradients = () => {
-    const randomHue1 = Math.floor(Math.random() * 360);
-    const randomHue2 = Math.floor(Math.random() * 360);
-    const randomHue3 = Math.floor(Math.random() * 360);
-    const randomHue4 = Math.floor(Math.random() * 360);
+    const randomHue1 = Math.floor(Math.random() * 60);
+    const randomHue2 = Math.floor(Math.random() * 60);
+    const randomHue3 = Math.floor(Math.random() * 60);
+    const randomHue4 = Math.floor(Math.random() * 60);
 
     const newBehindGradient = `radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(${randomHue1},100%,90%,var(--card-opacity)) 4%,hsla(${randomHue1},50%,80%,calc(var(--card-opacity)*0.75)) 10%,hsla(${randomHue1},25%,70%,calc(var(--card-opacity)*0.5)) 50%,hsla(${randomHue1},0%,60%,0) 100%),radial-gradient(35% 52% at 55% 20%,hsl(${randomHue2}, 100%, 70%) 0%,transparent 100%),radial-gradient(100% 100% at 50% 50%,hsl(${randomHue3}, 100%, 65%) 1%,transparent 76%),conic-gradient(from 124deg at 50% 50%,hsl(${randomHue4}, 100%, 70%) 0%,hsl(${randomHue2}, 100%, 70%) 40%,hsl(${randomHue2}, 100%, 70%) 60%,hsl(${randomHue4}, 100%, 70%) 100%)`;
     const newInnerGradient = `linear-gradient(145deg,hsla(${randomHue1}, 40%, 45%, 0.55) 0%,hsla(${randomHue3}, 60%, 70%, 0.27) 100%)`;
@@ -137,7 +137,7 @@ const ProfileCardDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={700} overflow="hidden">
+        <Box position="relative" className="demo-container" h={700} overflow="hidden" bg="#333333">
           <ProfileCard
             key={key}
             name="Javi A. Torres"
@@ -154,14 +154,15 @@ const ProfileCardDemo = () => {
             innerGradient={customInnerGradient}
           />
         </Box>        <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <Button
             onClick={generateRandomGradients}
             fontSize="xs"
-            bg="#170D27"
+            bg="#000"
             borderRadius="10px"
-            border="1px solid #271E37"
-            _hover={{ bg: "#271E37" }}
-            color="#fff"
+            border="1px solid #FFA500"
+            _hover={{ bg: "#111" }}
+            color="#FFA500"
             h={8}
           >
             Randomize Colors

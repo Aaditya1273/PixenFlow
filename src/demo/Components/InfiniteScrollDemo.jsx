@@ -99,29 +99,29 @@ const InfiniteScrollDemo = () => {
             width: "100%",
             height: "100%",
             borderRadius: "5px",
-            border: "1px solid #fff",
+            border: "1px solid #FFA500",
             overflow: "hidden",
             position: 'realtive'
           }}
         >
-          <p style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: -1, fontSize: '3rem', fontWeight: 900, color: '#271E37' }}>Balls!</p>
+          <p style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: -1, fontSize: '3rem', fontWeight: 900, color: '#FFA500' }}>Balls!</p>
           <Ballpit count={50} followCursor={false} />
         </div>
       ),
     },
-    { content: <p>Paragraph Item 2</p> },
-    { content: "Text Item 3" },
-    { content: <p>Paragraph Item 4</p> },
-    { content: "Text Item 5" },
-    { content: <p>Paragraph Item 6</p> },
-    { content: "Text Item 7" },
-    { content: <p>Paragraph Item 8</p> },
-    { content: "Text Item 9" },
-    { content: <p>Paragraph Item 10</p> },
-    { content: "Text Item 11" },
-    { content: <p>Paragraph Item 12</p> },
-    { content: "Text Item 13" },
-    { content: <p>Paragraph Item 14</p> },
+    { content: <p style={{ color: '#FFA500' }}>Paragraph Item 2</p> },
+    { content: <p style={{ color: '#FFA500' }}>Text Item 3</p> },
+    { content: <p style={{ color: '#FFA500' }}>Paragraph Item 4</p> },
+    { content: <p style={{ color: '#FFA500' }}>Text Item 5</p> },
+    { content: <p style={{ color: '#FFA500' }}>Paragraph Item 6</p> },
+    { content: <p style={{ color: '#FFA500' }}>Text Item 7</p> },
+    { content: <p style={{ color: '#FFA500' }}>Paragraph Item 8</p> },
+    { content: <p style={{ color: '#FFA500' }}>Text Item 9</p> },
+    { content: <p style={{ color: '#FFA500' }}>Paragraph Item 10</p> },
+    { content: <p style={{ color: '#FFA500' }}>Text Item 11</p> },
+    { content: <p style={{ color: '#FFA500' }}>Paragraph Item 12</p> },
+    { content: <p style={{ color: '#FFA500' }}>Text Item 13</p> },
+    { content: <p style={{ color: '#FFA500' }}>Paragraph Item 14</p> },
   ];
 
   const autoplayOptions = [{ value: "up", label: "Up" }, { value: "down", label: "Down" }];
@@ -137,7 +137,7 @@ const InfiniteScrollDemo = () => {
           p={0}
           overflow="hidden"
           display="flex"
-          bg="#060010"
+          bg="#333333"
           justifyContent="center"
           alignItems="center"
         >
@@ -153,6 +153,7 @@ const InfiniteScrollDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSwitch isChecked={isTilted} title="Tilt" onChange={() => setIsTilted(!isTilted)} />
 
           {isTilted && (
@@ -168,7 +169,7 @@ const InfiniteScrollDemo = () => {
             />
           )}
 
-          <Separator my={4} borderColor="#271E37" />
+          <Separator my={4} borderColor="#FFA500" />
 
           <PreviewSwitch isChecked={autoplay} title="Autoplay" onChange={() => setAutoplay(!autoplay)} />
 

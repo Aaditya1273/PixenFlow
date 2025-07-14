@@ -44,11 +44,12 @@ const GlassIconsDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333">
           <GlassIcons items={items} className="my-glass-icons" />
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSwitch title="Colorful" isChecked={colorful} onChange={(checked) => { setColorful(checked); }} />
         </Customize>
 

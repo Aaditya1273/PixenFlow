@@ -29,23 +29,23 @@ const SpotlightCardDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" py={10}>
-          <SpotlightCard className="custom-spotlight-card">
+        <Box position="relative" className="demo-container" py={10} bg="#333333">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 165, 0, 0.25)">
             <Flex h={'100%'} direction="column" alignItems='flex-start' justifyContent="center">
-              <Icon mb={3} boxSize={12} as={VscSparkleFilled} />
-              <Text fontWeight={600} fontSize={'1.4rem'} letterSpacing={'-.5px'}>Boost Your Experience</Text>
-              <Text color='#a1a1aa' fontSize={'14px'} mt={1} mb={8} >Get exclusive benefits, features & 24/7 support as a permanent club member.</Text>
+              <Icon mb={3} boxSize={12} as={VscSparkleFilled} color="#FFA500" />
+              <Text fontWeight={600} fontSize={'1.4rem'} letterSpacing={'-.5px'} color="#FFA500">Boost Your Experience</Text>
+              <Text color='rgba(255, 165, 0, 0.7)' fontSize={'14px'} mt={1} mb={8} >Get exclusive benefits, features & 24/7 support as a permanent club member.</Text>
             </Flex>
           </SpotlightCard>
         </Box>
 
-        <h2 className="demo-title-extra">Custom Color</h2>
-        <Box position="relative" className="demo-container" py={10}>
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="purple">
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Custom Color</h2>
+        <Box position="relative" className="demo-container" py={10} bg="#333333">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="orange">
             <Flex h={'100%'} direction="column" alignItems='flex-start' justifyContent="center">
-              <Icon mb={3} boxSize={8} as={FaLock} />
-              <Text fontWeight={600} fontSize={'1.4rem'} letterSpacing={'-.5px'}>Enhanced Security</Text>
-              <Text color='#a1a1aa' fontSize={'14px'} mt={1} mb={8} >Our state of the art software offers peace of mind through strict security measures.</Text>
+              <Icon mb={3} boxSize={8} as={FaLock} color="#FFA500" />
+              <Text fontWeight={600} fontSize={'1.4rem'} letterSpacing={'-.5px'} color="#FFA500">Enhanced Security</Text>
+              <Text color='rgba(255, 165, 0, 0.7)' fontSize={'14px'} mt={1} mb={8} >Our state of the art software offers peace of mind through strict security measures.</Text>
             </Flex>
           </SpotlightCard>
         </Box>

@@ -106,6 +106,7 @@ const BounceCardsDemo = () => {
           position="relative"
           pb="4em"
           className="demo-container"
+          bg="#333333"
         >
           <BounceCards
             key={key}
@@ -123,6 +124,7 @@ const BounceCardsDemo = () => {
         </Flex>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSwitch title="Enable Hover Effect" isChecked={enableHover} onChange={(checked) => { setEnableHover(checked); forceRerender() }} />
 
           <PreviewSlider

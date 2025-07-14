@@ -66,17 +66,19 @@ const CircularGalleryDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden" bg="#333333">
           <CircularGallery
             key={key}
             bend={bend}
             borderRadius={borderRadius}
             scrollSpeed={scrollSpeed}
             scrollEase={scrollEase}
+            textColor="#FFA500"
           />
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Bend Level"
             min={-10}

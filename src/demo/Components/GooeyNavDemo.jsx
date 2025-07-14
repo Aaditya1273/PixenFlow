@@ -77,7 +77,7 @@ const GooeyNavDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333">
           <GooeyNav
             items={items}
             animationTime={500}
@@ -90,6 +90,7 @@ const GooeyNavDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Particle Count"
             min={1}

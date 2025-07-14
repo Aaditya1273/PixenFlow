@@ -79,7 +79,7 @@ const CarouselDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333">
           <Carousel
             key={key}
             baseWidth={width}
@@ -92,6 +92,7 @@ const CarouselDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Width"
             min={250}
@@ -123,7 +124,7 @@ const CarouselDemo = () => {
 
           <PreviewSwitch
             title="Pause On Hover"
-            sChecked={pauseOnHover}
+            isChecked={pauseOnHover}
             isDisabled={!autoplay}
             onChange={(checked) => { setPauseOnHover(checked); forceRerender() }}
           />

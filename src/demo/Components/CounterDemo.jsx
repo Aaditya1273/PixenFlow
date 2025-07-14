@@ -125,38 +125,38 @@ const CounterDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={400} overflow="hidden">
+        <Box position="relative" className="demo-container" h={400} overflow="hidden" bg="#333333">
           <Counter
             value={value}
             places={[100, 10, 1]}
-            gradientFrom="#060010"
+            gradientFrom="#000000"
             fontSize={fontSize}
             padding={5}
             gap={gap}
             borderRadius={10}
             horizontalPadding={15}
-            textColor="white"
+            textColor="#FFA500"
             fontWeight={900}
           />
 
           <Flex gap={4} bottom="1em" direction={"row"} justify={"center"} mt={4} position='absolute'>
             <Button
-              bg="#170D27"
+              bg="#000000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#111111" }}
+              color="#FFA500"
               h={10}
               w={10}
               onClick={() => setValue(value - 1)}>
               -
             </Button>
             <Button
-              bg="#170D27"
+              bg="#000000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#111111" }}
+              color="#FFA500"
               h={10}
               w={10}
               onClick={() => value < 999 && setValue(value + 1)}>
@@ -167,6 +167,7 @@ const CounterDemo = () => {
 
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Value"
             min={0}
