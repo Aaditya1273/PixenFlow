@@ -71,7 +71,7 @@ const FadeDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={200}>
+        <Box position="relative" className="demo-container" bg="#333333" minH={200}>
           <FadeContent
             key={key}
             blur={blur}
@@ -85,12 +85,12 @@ const FadeDemo = () => {
               fontWeight="bolder"
               justifyContent="center"
               alignItems="center"
-              color="#fff"
+              color="#FFA500"
               h={100}
               borderRadius="25px"
-              border="1px solid #392e4e"
+              border="1px solid #FFA500"
               w={200}
-              bg={"#060010"}
+              bg={"#000"}
             >
               Fade
             </Flex>

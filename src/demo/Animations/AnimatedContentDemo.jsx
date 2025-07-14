@@ -47,7 +47,7 @@ const AnimatedContentDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={400} overflow="hidden">
+        <Box position="relative" className="demo-container" bg="#333333" minH={400} overflow="hidden">
           <RefreshButton onClick={forceRerender} />
           <AnimatedContent
             key={key}
@@ -67,12 +67,12 @@ const AnimatedContentDemo = () => {
               fontWeight="bolder"
               justifyContent="center"
               alignItems="center"
-              color="#fff"
+              color="#FFA500"
               h={100}
               borderRadius="25px"
-              border="1px solid #392e4e"
+              border="1px solid #FFA500"
               w={200}
-              bg={"#060010"}
+              bg={"#000"}
             >
               Animate Me
             </Flex>
@@ -83,33 +83,33 @@ const AnimatedContentDemo = () => {
           <Flex gap={2} wrap="wrap">
             <Button
               fontSize="xs"
-              bg="#170D27"
+              bg="#000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
               h={8}
               onClick={() => {
                 setDirection(direction === "vertical" ? "horizontal" : "vertical");
                 forceRerender();
               }}
             >
-              Direction: <Text color={"#a1a1aa"}>&nbsp;{String(direction)}</Text>
+              Direction: <Text color={"#FFA500"} opacity={0.7}>&nbsp;{String(direction)}</Text>
             </Button>
             <Button
               fontSize="xs"
-              bg="#170D27"
+              bg="#000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
               h={8}
               onClick={() => {
                 setEase(ease === "power3.out" ? "bounce.out" : ease === "bounce.out" ? "elastic.out(1, 0.3)" : "power3.out");
                 forceRerender();
               }}
             >
-              Ease: <Text color={"#a1a1aa"}>&nbsp;{ease}</Text>
+              Ease: <Text color={"#FFA500"} opacity={0.7}>&nbsp;{ease}</Text>
             </Button>
           </Flex>
 

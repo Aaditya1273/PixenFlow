@@ -66,8 +66,8 @@ const FluidGlassDemo = () => {
         ...baseProps,
         transmission,
         roughness,
-        color: '#ffffff',
-        attenuationColor: '#ffffff',
+        color: '#FFA500',
+        attenuationColor: '#FFA500',
         attenuationDistance: 0.25,
       };
     }
@@ -105,7 +105,7 @@ const FluidGlassDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={600} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={600} p={0} overflow="hidden" bg="#333333">
           <FluidGlass
             key={key}
             mode={mode}
@@ -116,6 +116,7 @@ const FluidGlassDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSelect
             title="Mode:"
             options={modeOptions}

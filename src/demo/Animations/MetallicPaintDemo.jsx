@@ -59,11 +59,12 @@ const LiquidPaperDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333">
           <MetallicPaint key={key} imageData={imageData} params={{ edge, patternBlur, patternScale, refraction, speed, liquid }} />
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Edge"
             min={0}

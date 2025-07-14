@@ -16,7 +16,7 @@ const DEFAULT_TEXT = 'Aim... aand...';
 
 const CrosshairDemo = () => {
   const [linkText, setLinkText] = useState(DEFAULT_TEXT)
-  const [color, setColor] = useState('#ffffff');
+  const [color, setColor] = useState('#FFA500');
   const [targeted, setTargeted] = useState(true);
   const linkRef  = useRef(null);
   
@@ -40,12 +40,13 @@ const CrosshairDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box ref={containerRef} position="relative" className="demo-container" minH={300} overflow="hidden">
+        <Box ref={containerRef} position="relative" className="demo-container" minH={300} overflow="hidden" bg="#333333">
           <Crosshair containerRef={targeted ? null : containerRef} color={color} />
 
           <Flex direction="column" justifyContent="center" alignItems="center">
-            <Text _hover={{ color: 'magenta' }} transition=".3s ease" textAlign="center" fontWeight={900} fontSize={{ base: '2rem', md: '4rem' }} as="a" href="https://github.com/DavidHDev/react-bits"
+            <Text _hover={{ color: '#FFC966' }} transition=".3s ease" textAlign="center" fontWeight={900} fontSize={{ base: '2rem', md: '4rem' }} as="a" href="https://github.com/DavidHDev/react-bits"
             ref={linkRef}
+              color="#FFA500"
               onMouseEnter={() => {
                 setLinkText('Shoot!!!')
               }}
@@ -56,7 +57,7 @@ const CrosshairDemo = () => {
             >
               {linkText}
             </Text>
-            <Text position="relative" top="-10px" color="#444">(hover the text)</Text>
+            <Text position="relative" top="-10px" color="#FFA500" opacity={0.7}>(hover the text)</Text>
           </Flex>
           <Text
             ref={hiddenRef}
@@ -76,7 +77,7 @@ const CrosshairDemo = () => {
 
         <Customize>
           <Flex gap={4} align="center" mt={4} mb={4}>
-            <Text fontSize="sm">Crosshair Color</Text>
+            <Text fontSize="sm" color="#FFA500">Crosshair Color</Text>
             <Input
               type="color"
               value={color}
@@ -85,16 +86,17 @@ const CrosshairDemo = () => {
               }}
               width="60px"
               p={0}
+              border="1px solid #FFA500"
             />
           </Flex>
 
           <Button
             fontSize="xs"
-            bg="#170D27"
+            bg="#000"
             borderRadius="10px"
-            border="1px solid #271E37"
-            _hover={{ bg: "#271E37" }}
-            color="#fff"
+            border="1px solid #FFA500"
+            _hover={{ bg: "#1a1a1a" }}
+            color="#FFA500"
             h={8}
             onClick={() => {
               setTargeted(!targeted);

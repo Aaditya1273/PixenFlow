@@ -103,7 +103,7 @@ const TiltedCardDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={500} overflow="hidden">
+        <Box position="relative" className="demo-container" minH={500} overflow="hidden" bg="#333333">
           <TiltedCard
             imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
             altText="Kendrick Lamar - GNX Album Cover"
@@ -118,7 +118,7 @@ const TiltedCardDemo = () => {
             showTooltip={showTooltip}
             displayOverlayContent={displayOverlayContent}
             overlayContent={
-              <p className="tilted-card-demo-text">
+              <p className="tilted-card-demo-text" style={{ color: '#FFA500' }}>
                 Kendrick Lamar - GNX
               </p>
             }
@@ -126,6 +126,7 @@ const TiltedCardDemo = () => {
         </Box>
 
         <Customize className="preview-options">
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Rotate Amplitude"
             min={0}

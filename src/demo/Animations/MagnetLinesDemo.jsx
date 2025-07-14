@@ -69,8 +69,8 @@ const MagnetLinesDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Flex overflow="hidden" justifyContent="center" pb={'1em'} alignItems="center" className="demo-container">
-          <MagnetLines rows={10} columns={12} containerSize="40vmin" lineWidth="2px" lineHeight="30px" />
+        <Flex overflow="hidden" justifyContent="center" pb={'1em'} alignItems="center" className="demo-container" bg="#333333">
+          <MagnetLines rows={10} columns={12} containerSize="40vmin" lineWidth="2px" lineHeight="30px" lineColor="#FFA500" />
         </Flex>
 
         <PropTable data={propData} />

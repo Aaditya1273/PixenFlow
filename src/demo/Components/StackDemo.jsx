@@ -70,7 +70,7 @@ const StackDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={400} overflow="hidden">
+        <Box position="relative" className="demo-container" minH={400} overflow="hidden" bg="#333333">
           <Stack
             key={key}
             randomRotation={randomRotation}
@@ -81,6 +81,7 @@ const StackDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSwitch title="Random Rotation" isChecked={randomRotation} onChange={(checked) => { setRandomRotation(checked); forceRerender() }} />
 
           <PreviewSlider

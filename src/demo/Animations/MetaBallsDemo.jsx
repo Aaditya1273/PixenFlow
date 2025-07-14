@@ -14,8 +14,8 @@ import { metaBalls } from "../../constants/code/Animations/metaBallsCode";
 import MetaBalls from "../../content/Animations/MetaBalls/MetaBalls";
 
 const MetaBallsDemo = () => {
-  const [color, setColor] = useState("#ffffff");
-  const [cursorBallColor, setCursorBallColor] = useState("#ffffff");
+  const [color, setColor] = useState("#FFA500");
+  const [cursorBallColor, setCursorBallColor] = useState("#FFA500");
   const [speed, setSpeed] = useState(0.3);
   const [animationSize, setAnimationSize] = useState(30);
   const [ballCount, setBallCount] = useState(15);
@@ -91,7 +91,7 @@ const MetaBallsDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden" bg="#333333">
           <MetaBalls
             color={color}
             cursorBallColor={cursorBallColor}
@@ -107,12 +107,14 @@ const MetaBallsDemo = () => {
 
         <Customize className="preview-options">
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Color</Text>
+            <Text fontSize="sm" color="#FFA500">Color</Text>
             <Input
               type="color"
               value={color}
               onChange={(e) => { setColor(e.target.value); setCursorBallColor(e.target.value) }}
               width="50px"
+              border="1px solid #FFA500"
+              p={0}
             />
           </Flex>
 
@@ -182,8 +184,6 @@ const MetaBallsDemo = () => {
             width={150}
           />
         </Customize>
-
-
 
         <PropTable data={propData} />
         <Dependencies dependencyList={['ogl']} />

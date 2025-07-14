@@ -15,13 +15,13 @@ import BlobCursor from "../../ts-tailwind/Animations/BlobCursor/BlobCursor";
 
 const BlobCursorDemo = () => {
   const [blobType, setBlobType] = useState('circle');
-  const [fillColor, setFillColor] = useState('#5227FF');
+  const [fillColor, setFillColor] = useState('#FFA500');
   const [trailCount, setTrailCount] = useState(3);
   const [sizes, setSizes] = useState([60, 125, 75]);
   const [innerSizes, setInnerSizes] = useState([20, 35, 25]);
-  const [innerColor, setInnerColor] = useState('rgba(255,255,255,0.8)');
+  const [innerColor, setInnerColor] = useState('rgba(0,0,0,0.8)');
   const [opacities, setOpacities] = useState([0.6, 0.6, 0.6]);
-  const [shadowColor, setShadowColor] = useState('rgba(0,0,0,0.75)');
+  const [shadowColor, setShadowColor] = useState('rgba(255, 165, 0, 0.5)');
   const [shadowBlur, setShadowBlur] = useState(5);
   const [shadowOffsetX, setShadowOffsetX] = useState(10);
   const [shadowOffsetY, setShadowOffsetY] = useState(10);
@@ -61,7 +61,7 @@ const BlobCursorDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box height={600} position="relative" className="demo-container" overflow="hidden">
+        <Box position="relative" className="demo-container" h="600px" bg="#333333">
           <BlobCursor
             blobType={blobType}
             fillColor={fillColor}
@@ -76,34 +76,36 @@ const BlobCursorDemo = () => {
             shadowOffsetY={shadowOffsetY}
             fastDuration={fastDuration}
             slowDuration={slowDuration}
+            slowEase={'power1.out'}
             zIndex={zIndex}
           />
+          <Text fontSize="2xl" fontWeight="bolder" color="#FFA500" w="100%" textAlign="center" position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)">
+            Move your cursor around!
+          </Text>
         </Box>
 
         <Customize>
-
-          <Button
-            mb={2}
-            fontSize="xs"
-            bg="#170D27"
-            borderRadius="10px"
-            border="1px solid #271E37"
-            _hover={{ bg: "#271E37" }}
-            color="#fff"
-            h={8}
-            onClick={() => setBlobType(blobType === 'circle' ? 'square' : 'circle')}
-          >
-            Blob Type: <Text color={"#a1a1aa"}>&nbsp;{blobType}</Text>
-          </Button>
-          <Flex direction="column" mt={2}>
+          <Flex gap={2} wrap="wrap">
+            <Button
+              fontSize="xs"
+              bg="#000"
+              borderRadius="10px"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
+              h={8}
+              onClick={() => setBlobType(blobType === 'circle' ? 'square' : 'circle')}
+            >
+              Shape: <Text color={"#FFA500"} opacity={0.7}>&nbsp;{blobType}</Text>
+            </Button>
             <Flex alignItems="center" fontSize="xs" h={8}>
-              Fill Color:&nbsp;&nbsp;<input type="color" value={fillColor} style={{ height: '22px', outline: 'none', border: '1px solid #999', width: '50px', background: 'transparent' }} onChange={(e) => setFillColor(e.target.value)} />
+              Fill Color:&nbsp;&nbsp;<input type="color" value={fillColor} style={{ height: '22px', outline: 'none', border: '1px solid #FFA500', width: '50px', background: 'transparent' }} onChange={(e) => setFillColor(e.target.value)} />
             </Flex>
             <Flex alignItems="center" fontSize="xs" h={8}>
-              Inner Color:&nbsp;&nbsp;<input type="color" value={innerColor} style={{ height: '22px', outline: 'none', border: '1px solid #999', width: '50px', background: 'transparent' }} onChange={(e) => setInnerColor(e.target.value)} />
+              Inner Color:&nbsp;&nbsp;<input type="color" value={innerColor} style={{ height: '22px', outline: 'none', border: '1px solid #FFA500', width: '50px', background: 'transparent' }} onChange={(e) => setInnerColor(e.target.value)} />
             </Flex>
             <Flex alignItems="center" fontSize="xs" h={8}>
-              Shadow Color:&nbsp;&nbsp;<input type="color" value={shadowColor} style={{ height: '22px', outline: 'none', border: '1px solid #999', width: '50px', background: 'transparent' }} onChange={(e) => setShadowColor(e.target.value)} />
+              Shadow Color:&nbsp;&nbsp;<input type="color" value={shadowColor} style={{ height: '22px', outline: 'none', border: '1px solid #FFA500', width: '50px', background: 'transparent' }} onChange={(e) => setShadowColor(e.target.value)} />
             </Flex>
           </Flex>
 
@@ -200,8 +202,8 @@ const BlobCursorDemo = () => {
           />
         </Customize>
 
-        <p className="demo-extra-info" style={{ marginTop: '20px' }}>
-          <FiAlertTriangle position="relative" top="-1px" mr="2" /> SVG filters are not fully supported on Safari. Performance may vary.
+        <p className="demo-extra-info" style={{ marginTop: '20px', color: '#FFA500', opacity: 0.7 }}>
+          <FiAlertTriangle style={{ position: "relative", top: "-1px", marginRight: '2px', display: 'inline-block' }} /> SVG filters are not fully supported on Safari. Performance may vary.
         </p>
 
         <PropTable data={propData} />

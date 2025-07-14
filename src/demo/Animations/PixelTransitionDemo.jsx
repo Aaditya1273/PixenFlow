@@ -77,14 +77,14 @@ const propData = [
 const PixelTransitionDemo = () => {
   const [text, setText] = useState("Pixel perfect magic!");
   const [gridSize, setGridSize] = useState(8);
-  const [pixelColor, setPixelColor] = useState("#ffffff");
+  const [pixelColor, setPixelColor] = useState("#FFA500");
   const [animationStepDuration, setAnimationStepDuration] = useState(0.4);
   const [key, forceRerender] = useForceRerender();
 
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Flex direction="column" position="relative" className="demo-container" minH={400} maxH={400} overflow="hidden">
+        <Flex direction="column" position="relative" className="demo-container" bg="#333333" minH={400} maxH={400} overflow="hidden">
           <PixelTransition
             key={key}
             firstContent={
@@ -101,10 +101,10 @@ const PixelTransitionDemo = () => {
                   height: "100%",
                   display: "grid",
                   placeItems: "center",
-                  backgroundColor: "#111"
+                  backgroundColor: "#000"
                 }}
               >
-                <p style={{ fontWeight: 900, fontSize: "3rem", color: "#ffffff" }}>Meow!</p>
+                <p style={{ fontWeight: 900, fontSize: "3rem", color: "#FFA500" }}>Meow!</p>
               </div>
             }
             gridSize={gridSize}
@@ -112,7 +112,7 @@ const PixelTransitionDemo = () => {
             animationStepDuration={animationStepDuration}
             className="custom-pixel-card"
           />
-          <Text mt={2} color="#a6a6a6">Psst, hover the card!</Text>
+          <Text mt={2} color="#FFA500" opacity={0.7}>Psst, hover the card!</Text>
         </Flex>
 
         <Customize>
@@ -144,7 +144,7 @@ const PixelTransitionDemo = () => {
           />
 
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Pixel Color</Text>
+            <Text fontSize="sm" color="#FFA500">Pixel Color</Text>
             <Input
               type="color"
               value={pixelColor}

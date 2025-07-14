@@ -52,7 +52,7 @@ const ChromaGridDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h='auto' overflow="hidden" p={0} py={6}>
+        <Box position="relative" className="demo-container" h='auto' overflow="hidden" p={0} py={6} bg="#333333">
           <ChromaGrid />
         </Box>
 

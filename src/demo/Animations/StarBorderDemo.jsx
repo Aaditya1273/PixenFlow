@@ -15,12 +15,12 @@ import Customize from "../../components/common/Preview/Customize";
 const StarBorderDemo = () => {
   const [thickness, setThickness] = useState(1);
   const [speed, setSpeed] = useState(5);
-  const [color, setColor] = useState("magenta");
+  const [color, setColor] = useState("#FFA500");
 
   const colorOptions = [
-    { value: "magenta", label: "Magenta" },
-    { value: "cyan", label: "Cyan" },
-    { value: "white", label: "White" },
+    { value: "#FFA500", label: "Orange" },
+    { value: "#FFC966", label: "Light Orange" },
+    { value: "#D98200", label: "Dark Orange" },
   ];
 
   const propData = [
@@ -59,18 +59,19 @@ const StarBorderDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={400}>
+        <Box position="relative" className="demo-container" h={400} bg="#333333">
           <StarBorder
             className="star-border-demo"
             color={color}
             thickness={thickness}
             speed={`${speed}s`}
           >
-            <Text mx={0} fontSize={'1em'}>Star Border</Text>
+            <Text mx={0} fontSize={'1em'} color="#FFA500">Star Border</Text>
           </StarBorder>
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSelect
             title="Color"
             options={colorOptions}

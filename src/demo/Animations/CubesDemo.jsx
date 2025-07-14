@@ -16,7 +16,7 @@ import Cubes from "../../content/Animations/Cubes/Cubes";
 
 const CubesDemo = () => {
   // State for customizable props
-  const [borderStyle, setBorderStyle] = useState("2px dashed #B19EEF");
+  const [borderStyle, setBorderStyle] = useState("2px dashed #FFA500");
   const [gridSize, setGridSize] = useState(10);
   const [maxAngle, setMaxAngle] = useState(45);
   const [radius, setRadius] = useState(3);
@@ -25,9 +25,9 @@ const CubesDemo = () => {
 
   // Border style options for select
   const borderOptions = [
-    { value: "2px dotted #fff", label: "Dotted White" },
-    { value: "2px dashed #B19EEF", label: "Dashed Purple" },
-    { value: "3px solid #fff", label: "Solid White" }
+    { value: "2px dotted #FFA500", label: "Dotted Orange" },
+    { value: "2px dashed #FFA500", label: "Dashed Orange" },
+    { value: "3px solid #FFA500", label: "Solid Orange" }
   ];
 
   const propData = [
@@ -120,7 +120,7 @@ const CubesDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={650} overflow="hidden">
+        <Box position="relative" className="demo-container" h={650} overflow="hidden" bg="#333333">
           <Cubes 
             borderStyle={borderStyle}
             gridSize={gridSize}
@@ -128,6 +128,8 @@ const CubesDemo = () => {
             radius={radius}
             autoAnimate={autoAnimate}
             rippleOnClick={rippleOnClick}
+            faceColor="#000"
+            rippleColor="#FFA500"
           />
         </Box>
 

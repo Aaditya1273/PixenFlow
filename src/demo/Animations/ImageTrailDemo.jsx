@@ -33,7 +33,7 @@ const ImageTrailDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333">
           <ImageTrail
             key={key}
             items={[
@@ -50,25 +50,25 @@ const ImageTrailDemo = () => {
           />
 
           <Flex position="absolute" justifyContent="center" flexDirection="column" alignItems="center">
-            <Text fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} color='#271E37' mb={0}>
+            <Text fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} color='#FFA500' mb={0}>
               Hover Me.
             </Text>
-            <Text fontSize="18px" fontWeight={900} color='#a6a6a6' mt={0}>
+            <Text fontSize="18px" fontWeight={900} color='#FFA500' opacity={0.7} mt={0}>
               Variant {variant}
             </Text>
           </Flex>
         </Box>
 
         <div className="preview-options">
-          <h2 className="demo-title-extra">Customize</h2>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <Flex gap={6} direction="column">
             <ButtonGroup isAttached size="sm">
               <Button
                 fontSize="xs"
                 disabled
-                border="1px solid #271E37"
+                border="1px solid #FFA500"
                 h={8}
-                _disabled={{ bg: '#271E37', border: "1px solid #271E37", color: '#fff', cursor: 'not-allowed', _hover: { bg: '#222' } }}
+                _disabled={{ bg: '#000', border: "1px solid #FFA500", color: '#FFA500', cursor: 'not-allowed', _hover: { bg: '#000' } }}
               >
                 Variant
               </Button>
@@ -78,10 +78,10 @@ const ImageTrailDemo = () => {
                 return (
                   <Button
                     key={num}
-                    bg={isActive ? '#5227FF' : '#0D0716'}
-                    border="1px solid #271E37"
-                    _hover={{ backgroundColor: isActive ? '#5227FF' : '#0D0716' }}
-                    color="#fff"
+                    bg={isActive ? '#FFA500' : '#000'}
+                    border="1px solid #FFA500"
+                    _hover={{ backgroundColor: isActive ? '#FFA500' : '#1a1a1a' }}
+                    color={isActive ? '#000' : '#FFA500'}
                     fontSize="xs"
                     h={8}
                     onClick={() => {

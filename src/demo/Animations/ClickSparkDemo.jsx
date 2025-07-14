@@ -18,7 +18,7 @@ import { clickSpark } from '../../constants/code/Animations/clickSparkCode';
 import ClickSpark from "../../ts-default/Animations/ClickSpark/ClickSpark";
 
 const ClickSparkDemo = () => {
-  const [sparkColor, setSparkColor] = useState("#ffffff");
+  const [sparkColor, setSparkColor] = useState("#FFA500");
   const [sparkSize, setSparkSize] = useState(10);
   const [sparkRadius, setSparkRadius] = useState(15);
   const [sparkCount, setSparkCount] = useState(8);
@@ -81,7 +81,7 @@ const ClickSparkDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={300} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={300} p={0} overflow="hidden" bg="#333333">
           <ClickSpark
             key={key}
             sparkColor={sparkColor}
@@ -92,12 +92,12 @@ const ClickSparkDemo = () => {
             extraScale={extraScale}
           />
 
-          <Text position='absolute' fontWeight={900} fontSize='2rem' textAlign='center' color='#271E37' userSelect='none'>Click Around!</Text>
+          <Text position='absolute' top='50%' left='50%' transform='translate(-50%, -50%)' fontWeight={900} fontSize='2rem' textAlign='center' color='#FFA500' userSelect='none'>Click Around!</Text>
         </Box>
 
         <Customize>
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Spark Color:</Text>
+            <Text fontSize="sm" color="#FFA500">Spark Color:</Text>
             <input
               type="color"
               value={sparkColor}
@@ -105,6 +105,7 @@ const ClickSparkDemo = () => {
                 setSparkColor(e.target.value);
                 forceRerender();
               }}
+              style={{ height: '22px', outline: 'none', border: '1px solid #FFA500', width: '50px', background: 'transparent' }}
             />
           </Flex>
 

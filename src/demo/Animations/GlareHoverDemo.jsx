@@ -13,7 +13,7 @@ import { glareHover } from '../../constants/code/Animations/glareHoverCode';
 import GlareHover from "../../content/Animations/GlareHover/GlareHover";
 
 const GlareHoverDemo = () => {
-  const [glareColor, setGlareColor] = useState("#ffffff");
+  const [glareColor, setGlareColor] = useState("#FFA500");
   const [glareOpacity, setGlareOpacity] = useState(0.3);
   const [glareSize, setGlareSize] = useState(300);
   const [transitionDuration, setTransitionDuration] = useState(800);
@@ -109,10 +109,10 @@ const GlareHoverDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={600} overflow="hidden">
+        <Box position="relative" className="demo-container" bg="#333333" h={600} overflow="hidden">
           <GlareHover
-            background="#060010"
-            borderColor="#271E37"
+            background="#000"
+            borderColor="#FFA500"
             borderRadius="20px"
             width="400px"
             height="300px"
@@ -122,13 +122,13 @@ const GlareHoverDemo = () => {
             transitionDuration={transitionDuration}
             playOnce={playOnce}
           >
-            <Text textAlign="center" fontSize='3rem' fontWeight="900" color="#271E37" m={0}>Hover Me</Text>
+            <Text textAlign="center" fontSize='3rem' fontWeight="900" color="#FFA500" m={0}>Hover Me</Text>
           </GlareHover>
         </Box>
 
         <Customize>
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Glare Color</Text>
+            <Text fontSize="sm" color="#FFA500">Glare Color</Text>
             <input
               type="color"
               value={glareColor}

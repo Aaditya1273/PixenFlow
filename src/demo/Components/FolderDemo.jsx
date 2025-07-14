@@ -40,7 +40,7 @@ const FolderDemo = () => {
     }
   ];
 
-  const [color, setColor] = useState("#5227FF");
+  const [color, setColor] = useState("#FFA500");
   const [size, setSize] = useState(2);
 
   const [key, forceRerender] = useForceRerender();
@@ -48,13 +48,14 @@ const FolderDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333">
           <Folder key={key} size={size} color={color} className="custom-folder" />
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Color</Text>
+            <Text fontSize="sm" color="#FFA500">Color</Text>
             <input
               type="color"
               value={color}
@@ -62,6 +63,7 @@ const FolderDemo = () => {
                 setColor(e.target.value);
                 forceRerender();
               }}
+              style={{ border: '1px solid #FFA500', width: '50px', background: 'transparent', padding: 0 }}
             />
           </Flex>
 

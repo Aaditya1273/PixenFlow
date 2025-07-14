@@ -71,8 +71,8 @@ const MagnetDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <h2 className="demo-title-extra">Container</h2>
-        <Box position="relative" className="demo-container" minH={300}>
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Container</h2>
+        <Box position="relative" className="demo-container" minH={300} bg="#333333">
           <Magnet
             padding={padding}
             disabled={disabled}
@@ -83,9 +83,9 @@ const MagnetDemo = () => {
               h={100}
               fontSize="xl"
               fontWeight="bolder"
-              color="#fff"
-              bg="#060010"
-              border='1px solid #222'
+              color="#FFA500"
+              bg="#000"
+              border='1px solid #FFA500'
               borderRadius="20px"
               justifyContent="center"
               alignItems="center"
@@ -95,16 +95,16 @@ const MagnetDemo = () => {
           </Magnet>
         </Box>
 
-        <h2 className="demo-title-extra">Link</h2>
-        <Box position="relative" className="demo-container" minH={300}>
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Link</h2>
+        <Box position="relative" className="demo-container" minH={300} bg="#333333">
           <Magnet
             padding={Math.floor(padding / 2)}
             disabled={disabled}
             magnetStrength={magnetStrength}
           >
             <a href="https://github.com/DavidHDev/react-bits" target="_blank" rel="noreferrer">
-              <Flex fontSize="lg" color="#fff">
-                Star&nbsp;<Text color="#5227FF">Pixen Flow</Text>&nbsp;on GitHub!
+              <Flex fontSize="lg" color="#FFA500">
+                Star&nbsp;<Text color="#FFA500">Pixen Flow</Text>&nbsp;on GitHub!
               </Flex>
             </a>
           </Magnet>

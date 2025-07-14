@@ -57,8 +57,8 @@ const NoiseDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" background='#060010' minH={400} overflow="hidden">
-          <Text color="#271E37" fontSize="6rem" fontWeight={900} textAlign={'center'}>
+        <Box position="relative" className="demo-container" background='#333333' minH={400} overflow="hidden">
+          <Text color="#FFA500" fontSize="6rem" fontWeight={900} textAlign={'center'}>
             Ooh, edgy!
           </Text>
           <Noise
@@ -72,6 +72,7 @@ const NoiseDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Pattern Size"
             min={50}

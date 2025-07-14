@@ -25,7 +25,7 @@ const PixelTrailDemo = () => {
   const [trailSize, setTrailSize] = useState(0.1);
   const [maxAge, setMaxAge] = useState(250);
   const [interpolate, setInterpolate] = useState(5);
-  const [color, setColor] = useState("#5227FF");
+  const [color, setColor] = useState("#FFA500");
   const [gooeyEnabled, setGooeyEnabled] = useState(true);
   const [gooStrength, setGooStrength] = useState(2);
 
@@ -43,7 +43,7 @@ const PixelTrailDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden" bg="#333333">
           <RefreshButton onClick={forceRerender} />
           <PixelTrail
             key={key}
@@ -58,7 +58,7 @@ const PixelTrailDemo = () => {
             position="absolute"
             zIndex={0}
             fontSize="clamp(2rem, 6vw, 6rem)"
-            color="#271E37"
+            color="#FFA500"
             fontWeight={900}
           >
             Move Cursor.
@@ -66,6 +66,7 @@ const PixelTrailDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <PreviewSlider
             title="Grid Size"
             min={10}
@@ -103,14 +104,16 @@ const PixelTrailDemo = () => {
           />
 
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Color</Text>
+            <Text fontSize="sm" color="#FFA500">Color</Text>
             <Input
               type="color"
               value={color}
               onChange={(e) => { setColor(e.target.value); forceRerender(); }}
               width="50px"
+              border="1px solid #FFA500"
+              p={0}
             />
-            <Text fontSize="sm">{color}</Text>
+            <Text fontSize="sm" color="#FFA500">{color}</Text>
           </Flex>
 
           <PreviewSwitch

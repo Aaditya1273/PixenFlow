@@ -16,7 +16,7 @@ import { ribbons } from "../../constants/code/Animations/ribbonsCode";
 
 const RibbonsDemo = () => {
   const [baseThickness, setBaseThickness] = useState(30);
-  const [colors, setColors] = useState(['#5227FF']);
+  const [colors, setColors] = useState(['#FFA500']);
   const [speedMultiplier, setSpeedMultiplier] = useState(0.5);
   const [maxAge, setMaxAge] = useState(500);
 
@@ -101,8 +101,8 @@ const RibbonsDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden">
-          <Text position="absolute" fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} color="#271E37">Hover Me.</Text>
+        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden" bg="#333333">
+          <Text position="absolute" fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} color="#FFA500">Hover Me.</Text>
           <Ribbons
             baseThickness={baseThickness}
             colors={colors}
@@ -114,28 +114,29 @@ const RibbonsDemo = () => {
         </Box>
 
         <Customize>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Count</Text>
+            <Text fontSize="sm" color="#FFA500">Count</Text>
             <IconButton
               onClick={() => colors.length > 1 && setColors(colors.slice(0, -1))}
               fontSize="xs"
-              bg="#170D27"
+              bg="#000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
               h={10}
             >
               <FiMinus />
             </IconButton>
-            <Text>{colors.length}</Text>
+            <Text color="#FFA500">{colors.length}</Text>
             <IconButton
               fontSize="xs"
-              bg="#170D27"
+              bg="#000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
               h={10}
               onClick={() => {
                 if (colors.length < 10) {
