@@ -32,7 +32,7 @@ const tabsRecipe = defineSlotRecipe({
       _hover: { bg: "#271E37" },
 
       "&[data-state='active']": {
-        color: "#fff",
+        color: "#FFA500",
         bg: "#170D27",
       },
     },
@@ -44,7 +44,7 @@ export const toastStyles = {
     fontSize: "12px",
     borderRadius: "0.75rem",
     border: "1px solid #392e4e",
-    color: "#fff",
+    color: "#FFA500",
     backgroundColor: "#060010",
   },
 };
@@ -68,12 +68,12 @@ export const customTheme = createSystem(defaultConfig, {
   components: {
     Slider: {
       baseStyle: {
-        thumb: { bg: "#fff", _focus: { boxShadow: "none" } },
+        thumb: { bg: "#FFA500", _focus: { boxShadow: "none" } },
       },
       variants: {
         solid: {
           track: { bg: "#271E37" },
-          filledTrack: { bg: "#fff" },
+          filledTrack: { bg: "#FFA500" },
         },
       },
       defaultProps: { variant: "solid" },
@@ -87,8 +87,8 @@ export const customTheme = createSystem(defaultConfig, {
           _active: { bg: "#5227FF" },
         },
         thumb: {
-          _checked: { bg: "white" },
-          _active: { bg: "white" },
+          _checked: { bg: "#FFA500" },
+          _active: { bg: "#FFA500" },
         },
       },
     },

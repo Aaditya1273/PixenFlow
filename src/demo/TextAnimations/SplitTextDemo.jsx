@@ -47,6 +47,7 @@ const SplitTextDemo = () => {
         <Box
           position="relative"
           className="demo-container"
+          bg="#333333"
           minH={400}
           overflow="hidden"
         >
@@ -60,7 +61,7 @@ const SplitTextDemo = () => {
             splitType={splitType}
             threshold={threshold}
             className="text-devider-demo"
-            onLetterAnimationComplete={showCallback ? () => toast("✅ Animation Finished!") : undefined}
+            onLetterAnimationComplete={showCallback ? () => toast("✨ All set! Animation complete.") : undefined}
           />
         </Box>
 
@@ -68,11 +69,11 @@ const SplitTextDemo = () => {
           <Flex gap={2} wrap="wrap">
             <Button
               fontSize="xs"
-              bg="#170D27"
+              bg="#000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
               h={8}
               onClick={() => {
                 setSplitType(
@@ -85,15 +86,15 @@ const SplitTextDemo = () => {
                 forceRerender();
               }}
             >
-              Split Type <Text color={"#a1a1aa"}>&nbsp;{splitType}</Text>
+              Split Type <Text color={"#FFA500"} opacity={0.7}>&nbsp;{splitType}</Text>
             </Button>
             <Button
               fontSize="xs"
-              bg="#170D27"
+              bg="#000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
               h={8}
               onClick={() => {
                 setEase(
@@ -106,7 +107,7 @@ const SplitTextDemo = () => {
                 forceRerender();
               }}
             >
-              Ease: <Text color={"#a1a1aa"}>&nbsp;{ease}</Text>
+              Ease: <Text color={"#FFA500"} opacity={0.7}>&nbsp;{ease}</Text>
             </Button>
           </Flex>
 

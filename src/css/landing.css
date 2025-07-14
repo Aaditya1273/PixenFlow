@@ -4,7 +4,7 @@
   position: relative;
   overflow-x: hidden;
   background-color: #000000;
-  background-image: radial-gradient(circle at 50% 0%, #1a0b2e 0%, #000000 70%);
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 165, 0, 0.05), transparent 50%);
 }
 
 /* Blur partition lines removed as requested */

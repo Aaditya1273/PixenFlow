@@ -5,7 +5,7 @@ const PreviewSwitch = ({ title, isChecked, onChange, isDisabled }) => {
 
   return (
     <Flex align="center" gap="4" my={6}>
-      <Text fontSize="sm">{title}</Text>
+      <Text fontSize="sm" color="#FFA500">{title}</Text>
 
       <Switch.Root
         checked={isChecked}

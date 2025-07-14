@@ -15,7 +15,7 @@ const PreviewSlider = ({
 
   return (
     <Flex gap="4" align="center" my={6}>
-      <Text fontSize="sm">{title}</Text>
+      <Text fontSize="sm" color="#FFA500">{title}</Text>
       <Slider.Root
         min={min}
         max={max}
@@ -33,7 +33,7 @@ const PreviewSlider = ({
         </Slider.Control>
       </Slider.Root>
 
-      <Text fontSize="sm">
+      <Text fontSize="sm" color="#FFA500">
         {value}
         {valueUnit}
       </Text>

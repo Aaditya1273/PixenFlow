@@ -80,6 +80,7 @@ const BlurTextDemo = () => {
         <Box
           position="relative"
           className="demo-container"
+          bg="#333333"
           minH={400}
           overflow="hidden"
         >
@@ -90,7 +91,7 @@ const BlurTextDemo = () => {
             animateBy={animateBy}
             direction={direction}
             delay={delay}
-            onAnimationComplete={() => toast("✅ Animation Finished!")}
+            onAnimationComplete={() => toast("✨ All set! Animation complete.")}
             className="blur-text-demo"
           />
         </Box>
@@ -98,33 +99,33 @@ const BlurTextDemo = () => {
           <Flex gap={4} wrap="wrap">
             <Button
               fontSize="xs"
-              bg="#170D27"
+              bg="#000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
               h={8}
               onClick={() => {
                 setAnimateBy(animateBy === "words" ? "letters" : "words");
                 forceRerender();
               }}
             >
-              Animate By: <Text color={"#a1a1aa"}>&nbsp;{animateBy}</Text>
+              Animate By: <Text as="span" color="#FFA500" opacity={0.7}>&nbsp;{animateBy}</Text>
             </Button>
             <Button
               fontSize="xs"
-              bg="#170D27"
+              bg="#000"
               borderRadius="10px"
-              border="1px solid #271E37"
-              _hover={{ bg: "#271E37" }}
-              color="#fff"
+              border="1px solid #FFA500"
+              _hover={{ bg: "#1a1a1a" }}
+              color="#FFA500"
               h={8}
               onClick={() => {
                 setDirection(direction === "top" ? "bottom" : "top");
                 forceRerender();
               }}
             >
-              Direction: <Text color={"#a1a1aa"}>&nbsp;{direction}</Text>
+              Direction: <Text as="span" color="#FFA500" opacity={0.7}>&nbsp;{direction}</Text>
             </Button>
           </Flex>
 
