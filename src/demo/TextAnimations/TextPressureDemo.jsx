@@ -118,15 +118,15 @@ const TextPressureDemo = () => {
   const [width, setWidth] = useState(true);
   const [weight, setWeight] = useState(true);
   const [italic, setItalic] = useState(true);
-  const [textColor, setTextColor] = useState('#CCCCCC');
-  const [strokeColor, setStrokeColor] = useState('#666666');
+  const [textColor, setTextColor] = useState('#FFA500');
+  const [strokeColor, setStrokeColor] = useState('#B37400');
 
   const [key, forceRerender] = useForceRerender();
 
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={400} maxH={450} overflow="hidden" mb={6}>
+        <Box position="relative" className="demo-container" bg="#333333" minH={400} maxH={450} overflow="hidden" mb={6}>
           <RefreshButton onClick={forceRerender} />
           <Box w="100%" h="100%">
             <TextPressure
@@ -157,7 +157,7 @@ const TextPressureDemo = () => {
 
           <Flex alignItems='center' gap={4} flexWrap="wrap" mt={6}>
             <Flex gap={4} align="center">
-              <Text fontSize="sm">Text Color</Text>
+              <Text fontSize="sm" color="#FFA500">Text Color</Text>
               <input
                 type="color"
                 value={textColor}
@@ -170,7 +170,7 @@ const TextPressureDemo = () => {
             </Flex>
 
             <Flex gap={4} align="center">
-              <Text fontSize="sm">Stroke Color</Text>
+              <Text fontSize="sm" color="#FFA500">Stroke Color</Text>
               <input
                 type="color"
                 value={strokeColor}
@@ -183,7 +183,7 @@ const TextPressureDemo = () => {
             </Flex>
           </Flex>
 
-          <Text mt={6} color='#999'>Animation Settings</Text>
+          <Text mt={6} color='#FFA500'>Animation Settings</Text>
           <Flex gap={4} flexWrap="wrap">
             <PreviewSwitch
               title="Flex"

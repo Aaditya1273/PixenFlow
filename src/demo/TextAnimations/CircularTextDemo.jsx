@@ -56,7 +56,7 @@ const CircularTextDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" bg="#333333" h={400} overflow="hidden">
+        <Box position="relative" className="demo-container" bg="#333333" color="#FFA500" h={400} overflow="hidden">
           <CircularText text={text} onHover={onHover} spinDuration={spinDuration} />
         </Box>
 

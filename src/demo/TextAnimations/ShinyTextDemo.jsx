@@ -45,21 +45,21 @@ const ShinyTextDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <h2 className="demo-title-extra">Basic</h2>
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Basic</h2>
         <Box position="relative" className="demo-container" bg="#333333" minH={150} fontSize="24px">
           <ShinyText text="Just some shiny text!" disabled={false} speed={3} className="shiny-text-demo" />
         </Box>
 
-        <h2 className="demo-title-extra">Button Text</h2>
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Button Text</h2>
         <Box position="relative" className="demo-container" bg="#333333" minH={150} fontSize="24px">
           <div className="shiny-button">
             <ShinyText text="Shiny Button" disabled={false} speed={3} className="shiny-text-demo" />
           </div>
         </Box>
 
-        <h2 className="demo-title-extra">Configurable Speed</h2>
+        <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Configurable Speed</h2>
         <Box position="relative" className="demo-container" bg="#333333" minH={150} fontSize="24px">
-          <ShinyText text={speed < 2.5 ? '🐎 This is fast!' : '🐌 This is slow!'} disabled={false} speed={speed} className="shiny-text-demo" />
+          <ShinyText text={speed < 2.5 ? '🐎 Too fast!' : '🐌 Too slow!'} disabled={false} speed={speed} className="shiny-text-demo" />
         </Box>
 
         <Customize>

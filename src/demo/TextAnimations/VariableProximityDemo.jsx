@@ -76,6 +76,8 @@ const VariableProximityDemo = () => {
           minH={400}
           overflow="hidden"
           p={4}
+          bg="#333333"
+          color="#FFA500"
         >
           <VariableProximity
             label={'Hover me! And then star Pixen Flow on GitHub, or else...'}
@@ -89,7 +91,7 @@ const VariableProximityDemo = () => {
         </Box>
 
         <Box mt={6} className="preview-options">
-          <Text fontSize="xl" mb={2}>Customize</Text>
+          <Text fontSize="xl" mb={2} color="#FFA500">Customize</Text>
           <PreviewSlider
             title="Radius"
             min={50}
@@ -102,15 +104,19 @@ const VariableProximityDemo = () => {
           />
 
           <Flex gap={4} align="center" mt={4}>
-            <Text fontSize="sm">Falloff</Text>
+            <Text fontSize="sm" color="#FFA500">Falloff</Text>
             {["linear", "exponential", "gaussian"].map((type) => (
               <Button
                 key={type}
                 size="sm"
-                color="#ffffff"
+                color={type === falloff ? "#000" : "#FFA500"}
                 borderRadius="10px"
-                border={type === falloff ? '1px solid #170D27' : '1px solid #271E37'}
-                bg={type === falloff ? '#5227FF' : '#170D27'}
+                border={'1px solid #FFA500'}
+                bg={type === falloff ? '#FFA500' : 'transparent'}
+                _hover={{
+                  bg: type === falloff ? '#FFA500' : '#1a1a1a',
+                  color: type === falloff ? '#000' : '#FFA500'
+                }}
                 onClick={() => setFalloff(type)}
               >
                 {type}

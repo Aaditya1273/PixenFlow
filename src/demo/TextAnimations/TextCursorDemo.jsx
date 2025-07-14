@@ -75,14 +75,14 @@ const TextCursorDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg="#333333" color="#FFA500">
           <TextCursor
             key={key}
             text={text}
             followMouseDirection={followMouseDirection}
             randomFloat={randomFloat}
           />
-          <Text pointerEvents='none' position="absolute" textAlign='center' fontSize="4rem" fontWeight={900} userSelect="none" color='#271E37'>Hover Around!</Text>
+          <Text pointerEvents='none' position="absolute" textAlign='center' fontSize="4rem" fontWeight={900} userSelect="none" color='#FFA500' opacity={0.1}>Hover Around!</Text>
         </Box>
 
         <Customize>

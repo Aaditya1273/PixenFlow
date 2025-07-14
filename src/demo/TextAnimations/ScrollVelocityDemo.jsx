@@ -99,6 +99,8 @@ const ScrollVelocityDemo = () => {
           h={600}
           maxH={600}
           overflow={"hidden"}
+          bg="#333333"
+          color="#FFA500"
         >
           <Flex position="relative" justifyContent="center" alignItems="center">
             <ScrollVelocity texts={['Pixen Flow', 'Scroll Down']} velocity={velocity} className="custom-scroll-text" />

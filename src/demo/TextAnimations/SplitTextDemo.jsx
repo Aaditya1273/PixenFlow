@@ -48,6 +48,7 @@ const SplitTextDemo = () => {
           position="relative"
           className="demo-container"
           bg="#333333"
+          color="#FFA500"
           minH={400}
           overflow="hidden"
         >

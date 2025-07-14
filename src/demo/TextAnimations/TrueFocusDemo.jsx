@@ -28,7 +28,7 @@ const TrueFocusDemo = () => {
   const [blurAmount, setBlurAmount] = useState(5);
   const [animationDuration, setAnimationDuration] = useState(0.5);
   const [pauseBetweenAnimations, setPauseBetweenAnimations] = useState(1);
-  const [borderColor, setBorderColor] = useState("#5227FF");
+  const [borderColor, setBorderColor] = useState("#FFA500");
 
   const config = {
     sentence: text,
@@ -61,7 +61,7 @@ const TrueFocusDemo = () => {
     {
       name: "borderColor",
       type: "string",
-      default: "'green'",
+      default: "'orange'",
       description: "The color of the focus borders.",
     },
     {
@@ -88,13 +88,13 @@ const TrueFocusDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={200}>
+        <Box position="relative" className="demo-container" bg="#333333" color="#FFA500" minH={200}>
           <TrueFocus {...config} />
         </Box>
 
         <Customize>
           <Flex align="center" gap={2} mt={4}>
-            <Text fontSize="sm">Border Color</Text>
+            <Text fontSize="sm" color="#FFA500">Border Color</Text>
             <input
               type="color"
               value={borderColor}
