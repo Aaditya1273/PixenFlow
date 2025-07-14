@@ -67,7 +67,7 @@ const ScrambledTextDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" bg="#333333" color="#FFA500" h={500} overflow="hidden">
           <ScrambledText
             className="scrambled-text-demo"
             radius={radius}

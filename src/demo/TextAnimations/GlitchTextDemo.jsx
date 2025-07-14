@@ -57,12 +57,13 @@ const GlitchTextDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" bg="#333333" h={500} overflow="hidden">
           <GlitchText
             key={key}
             speed={speed}
             enableShadows={enableShadows}
             enableOnHover={enableOnHover}
+            color="#FFA500"
           >
             {enableOnHover ? "Hover Me" : "Glitch in the matrix!"}
           </GlitchText>

@@ -125,7 +125,7 @@ const RotatingTextDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" minH={400} maxH={400} overflow="hidden">
+        <Box position="relative" className="demo-container" bg="#333333" color="#FFA500" minH={400} maxH={400} overflow="hidden">
           <div className="rotating-text-demo">
             <LayoutGroup>
               <motion.p className="rotating-text-ptag" layout>

@@ -102,6 +102,7 @@ const DecryptedTextDemo = () => {
           position="relative"
           py={{ md: 6, sm: 4 }}
           className="demo-container"
+          bg="#333333"
           overflow="hidden"
         >
           <RefreshButton onClick={forceRerender} />
@@ -113,6 +114,7 @@ const DecryptedTextDemo = () => {
             justifyContent="flex-start"
             alignItems="flex-start"
             key={key}
+            color="#FFA500"
           >
             <DecryptedText
               speed={speed}
@@ -153,7 +155,7 @@ const DecryptedTextDemo = () => {
               parentClassName="decrypted-text"
               useOriginalCharsOnly={useOriginalCharsOnly}
               animateOn={animateOn}
-              onAnimationComplete={() => toast("✅ Animation Finished!")}
+              onAnimationComplete={() => toast("✨ All set! Animation complete.")}
             />
           </Flex>
         </Box>
@@ -179,7 +181,7 @@ const DecryptedTextDemo = () => {
             />
           </Flex>
 
-          <Separator borderColor="#271E37" my={4} />
+          <Separator borderColor="#FFA500" my={4} />
 
           <Flex wrap="wrap" direction="column" gap={4}>
             <PreviewSelect
@@ -207,7 +209,7 @@ const DecryptedTextDemo = () => {
             />
           </Flex>
 
-          <Separator borderColor="#271E37" my={4} />
+          <Separator borderColor="#FFA500" my={4} />
 
           <Flex wrap="wrap" direction="column" gap={4} mb={4}>
             <PreviewSlider
