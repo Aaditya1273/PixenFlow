@@ -78,7 +78,7 @@ const FuzzyTextDemo = () => {
             </FuzzyText>
             <Spacer my={1} />
             <FuzzyText baseIntensity={baseIntensity} hoverIntensity={hoverIntensity} enableHover={enableHover} fontSize={70} fontFamily="Gochi Hand">
-              not found
+              Not Found
             </FuzzyText>
           </Flex>
         </Box>

@@ -15,7 +15,7 @@ import CircularText from "../../content/TextAnimations/CircularText/CircularText
 import { circularText } from "../../constants/code/TextAnimations/circularTextCode";
 
 const CircularTextDemo = () => {
-  const [text, setText] = useState("Round and round we go!");
+  const [text, setText] = useState("*PIXEN*FLOW*DEV");
   const [onHover, setOnHover] = useState("speedUp");
   const [spinDuration, setSpinDuration] = useState(20);
 

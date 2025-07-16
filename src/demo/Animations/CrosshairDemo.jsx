@@ -48,7 +48,7 @@ const CrosshairDemo = () => {
             ref={linkRef}
               color="#FFA500"
               onMouseEnter={() => {
-                setLinkText('Shoot!!!')
+                setLinkText('Fire!!!')
               }}
               onMouseLeave={() => {
                 setLinkText(DEFAULT_TEXT)

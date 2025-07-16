@@ -15,7 +15,7 @@ const handleAnimationComplete = () => {
 };
 
 <BlurText
-  text="Isn't this so cool?!"
+  text="this is amzing"
   delay={150}
   animateBy="words"
   direction="top"

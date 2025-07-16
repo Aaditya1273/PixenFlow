@@ -59,7 +59,7 @@ const NoiseDemo = () => {
       <PreviewTab>
         <Box position="relative" className="demo-container" background='#333333' minH={400} overflow="hidden">
           <Text color="#FFA500" fontSize="6rem" fontWeight={900} textAlign={'center'}>
-            Ooh, edgy!
+            Feel The Noise !
           </Text>
           <Noise
             key={key}

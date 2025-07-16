@@ -63,7 +63,7 @@ const GradientTextDemo = () => {
               animationSpeed={speed}
               showBorder={false}
             >
-              Add a splash of color!
+              Add a flash of color!
             </GradientText>
           </Text>
         </Box>
@@ -76,7 +76,7 @@ const GradientTextDemo = () => {
               animationSpeed={speed}
               className="custom-gradient-class"
             >
-              Now with a cool border!
+              That's a amazing border !
             </GradientText>
           </Text>
         </Box>

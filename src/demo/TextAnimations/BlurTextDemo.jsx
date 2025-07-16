@@ -87,7 +87,7 @@ const BlurTextDemo = () => {
           <RefreshButton onClick={forceRerender} />
           <BlurText
             key={key}
-            text="Isn't this so cool?!"
+            text="this is amzing"
             animateBy={animateBy}
             direction={direction}
             delay={delay}

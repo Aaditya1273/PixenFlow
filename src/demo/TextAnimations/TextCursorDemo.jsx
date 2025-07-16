@@ -15,7 +15,7 @@ import { textCursor } from "../../constants/code/TextAnimations/textCursorCode";
 import PreviewInput from "../../components/common/Preview/PreviewInput";
 
 const TextCursorDemo = () => {
-  const [text, setText] = useState("⚛️");
+  const [text, setText] = useState("❤️");
   const [followMouseDirection, setFollowMouseDirection] = useState(true);
   const [randomFloat, setRandomFloat] = useState(true);
 

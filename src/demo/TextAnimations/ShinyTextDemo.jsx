@@ -47,13 +47,13 @@ const ShinyTextDemo = () => {
       <PreviewTab>
         <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Basic</h2>
         <Box position="relative" className="demo-container" bg="#333333" minH={150} fontSize="24px">
-          <ShinyText text="Just some shiny text!" disabled={false} speed={3} className="shiny-text-demo" />
+          <ShinyText text="Something Shiny!" disabled={false} speed={3} className="shiny-text-demo" />
         </Box>
 
         <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Button Text</h2>
         <Box position="relative" className="demo-container" bg="#333333" minH={150} fontSize="24px">
           <div className="shiny-button">
-            <ShinyText text="Shiny Button" disabled={false} speed={3} className="shiny-text-demo" />
+            <ShinyText text="Use This Effect" disabled={false} speed={3} className="shiny-text-demo" />
           </div>
         </Box>
 

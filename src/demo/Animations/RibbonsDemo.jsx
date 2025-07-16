@@ -102,7 +102,7 @@ const RibbonsDemo = () => {
     <TabbedLayout>
       <PreviewTab>
         <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden" bg="#333333">
-          <Text position="absolute" fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} color="#FFA500">Hover Me.</Text>
+          <Text position="absolute" fontSize="clamp(2rem, 6vw, 6rem)" fontWeight={900} color="#FFA500">Move Cursor.</Text>
           <Ribbons
             baseThickness={baseThickness}
             colors={colors}

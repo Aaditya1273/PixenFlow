@@ -92,7 +92,7 @@ const FadeDemo = () => {
               w={200}
               bg={"#000"}
             >
-              Fade
+              Let's Fade
             </Flex>
           </FadeContent>
           <RefreshButton onClick={forceRerender} />

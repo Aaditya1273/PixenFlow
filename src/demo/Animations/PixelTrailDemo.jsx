@@ -61,7 +61,7 @@ const PixelTrailDemo = () => {
             color="#FFA500"
             fontWeight={900}
           >
-            Move Cursor.
+            Hover Cursor.
           </Text>
         </Box>
 

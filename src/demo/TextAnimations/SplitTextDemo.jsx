@@ -55,7 +55,7 @@ const SplitTextDemo = () => {
           <RefreshButton onClick={forceRerender} />
           <SplitText
             key={key}
-            text="Hello, you!"
+            text="Welcome you!"
             delay={delay}
             duration={duration}
             ease={ease}

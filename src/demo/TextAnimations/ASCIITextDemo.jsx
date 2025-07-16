@@ -65,7 +65,7 @@ const propData = [
 ];
 
 const ASCIITextDemo = () => {
-  const [text, setText] = useState("Hey!");
+  const [text, setText] = useState("Flow");
   const [enableWaves, setEnableWaves] = useState(true);
   const [asciiFontSize, setAsciiFontSize] = useState(8);
 

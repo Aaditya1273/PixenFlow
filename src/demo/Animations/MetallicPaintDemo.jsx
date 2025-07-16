@@ -4,7 +4,7 @@ import { Box } from "@chakra-ui/react";
 
 import Customize from "../../components/common/Preview/Customize";
 import PreviewSlider from "../../components/common/Preview/PreviewSlider";
-import logo from '../../assets/logos/react-bits-logo-small-black.svg';
+import logo from '../../assets/logo.png';
 import CodeExample from "../../components/code/CodeExample";
 import useForceRerender from "../../hooks/useForceRerender";
 import CliInstallation from "../../components/code/CliInstallation";
@@ -13,7 +13,7 @@ import PropTable from "../../components/common/Preview/PropTable";
 import MetallicPaint, { parseLogoImage } from "../../content/Animations/MetallicPaint/MetallicPaint";
 import { metallicPaint } from "../../constants/code/Animations/metallicPaintCode";
 
-const LiquidPaperDemo = () => {
+const MetallicPaintDemo = () => {
   const [imageData, setImageData] = useState(null);
   const [edge, setEdge] = useState(0);
   const [patternScale, setPatternScale] = useState(2);
@@ -64,7 +64,7 @@ const LiquidPaperDemo = () => {
         </Box>
 
         <Customize>
-          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}></h2>
           <PreviewSlider
             title="Edge"
             min={0}
@@ -152,4 +152,4 @@ const LiquidPaperDemo = () => {
   );
 };
 
-export default LiquidPaperDemo;
+export default MetallicPaintDemo;

@@ -66,7 +66,7 @@ const StarBorderDemo = () => {
             thickness={thickness}
             speed={`${speed}s`}
           >
-            <Text mx={0} fontSize={'1em'} color="#FFA500">Star Border</Text>
+            <Text mx={0} fontSize={'1em'} color="#FFA500">Flash Border</Text>
           </StarBorder>
         </Box>
 
@@ -86,6 +86,7 @@ const StarBorderDemo = () => {
             max={8}
             step={0.5}
             value={thickness}
+            defaultValue={4}
             valueUnit="px"
             width={200}
             onChange={setThickness}

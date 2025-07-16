@@ -74,7 +74,7 @@ const AnimatedContentDemo = () => {
               w={200}
               bg={"#000"}
             >
-              Animate Me
+              Try to Animate Me
             </Flex>
           </AnimatedContent>
         </Box>

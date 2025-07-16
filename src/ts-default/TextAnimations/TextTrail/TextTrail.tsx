@@ -119,7 +119,7 @@ export interface TextTrailProps {
 }
 
 const TextTrail: React.FC<TextTrailProps> = ({
-  text = "Vibe",
+  text = "Flow",
   fontFamily = "Figtree",
   fontWeight = "900",
   noiseFactor = 1,

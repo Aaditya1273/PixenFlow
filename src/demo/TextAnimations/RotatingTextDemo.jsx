@@ -117,9 +117,9 @@ const RotatingTextDemo = () => {
   ];
 
   const words = [
-    "thinking",
-    "coding",
-    "components!",
+    "Minds",
+    "Layers",
+    "Blueprints!",
   ];
 
   return (
@@ -134,7 +134,7 @@ const RotatingTextDemo = () => {
                   layout
                   transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 >
-                  Creative{" "}
+                  Inventive{" "}
                 </motion.span>
                 <RotatingText
                   texts={words}
