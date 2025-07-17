@@ -196,7 +196,7 @@ const MasonryDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={700} overflow="hidden">
+        <Box position="relative" className="demo-container" h={700} overflow="hidden" bg="#333333">
           <RefreshButton onClick={handleRefresh} />
           <Masonry
             key={key}
