@@ -11,20 +11,20 @@ import Waves from "../../content/Backgrounds/Waves/Waves";
 import { waves } from '../../constants/code/Backgrounds/wavesCode';
 
 const WavesDemo = () => {
-  const [color, setColor] = useState('#ffffff');
+  const [color, setColor] = useState('#FFA500');
   const [waveSpeedX, setWaveSpeedX] = useState(0.0125);
 
   const propData = [
     {
       name: "lineColor",
       type: "string",
-      default: "black",
+      default: "'#FFA500'",
       description: "Defines the color of the wave lines drawn on the canvas."
     },
     {
       name: "backgroundColor",
       type: "string",
-      default: "transparent",
+      default: "'#333333'",
       description: "Sets the background color of the waves container."
     },
     {
@@ -98,7 +98,7 @@ const WavesDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Flex overflow="hidden" justifyContent="center" alignItems="center" minH={400} position="relative" pb={"4em"} className="demo-container">
+        <Flex overflow="hidden" justifyContent="center" alignItems="center" minH={400} position="relative" pb={"4em"} className="demo-container" bg='#333333'>
           <Waves
             waveSpeedX={waveSpeedX}
             lineColor={color}

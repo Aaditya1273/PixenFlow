@@ -227,7 +227,7 @@ const ModelViewerDemo = () => {
         </Customize>
 
         <PropTable data={propData} />
-        <Dependencies dependencyList={['three', '@react-three/fiber', '@react-three/drei']} />
+        
       </PreviewTab>
 
       <CodeTab>

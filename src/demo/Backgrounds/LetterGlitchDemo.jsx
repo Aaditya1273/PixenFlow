@@ -17,7 +17,7 @@ import useForceRerender from "../../hooks/useForceRerender";
 const LetterGlitchDemo = () => {
   const [smooth, setSmooth] = useState(true);
   const [speed, setSpeed] = useState(10);
-  const [colors, setColors] = useState(['#2b4539', '#61dca3', '#61b3dc']);
+  const [colors, setColors] = useState(['#FFA500', '#FF8C00', '#FFD700']);
   const [showCenterVignette, setShowCenterVignette] = useState(true);
   const [showOuterVignette, setShowOuterVignette] = useState(false);
 
@@ -27,7 +27,7 @@ const LetterGlitchDemo = () => {
     {
       name: "glitchColors",
       type: "string[]",
-      default: "['#2b4539', '#61dca3', '#61b3dc']",
+      default: "['#FFA500', '#FF8C00', '#FFD700']",
       description: "Controls the colors of the letters rendered in the canvas."
     },
     {
@@ -59,7 +59,7 @@ const LetterGlitchDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0}>
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0} bg='#333333'>
           <LetterGlitch
             key={key}
             glitchColors={colors}

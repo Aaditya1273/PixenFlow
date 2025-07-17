@@ -15,7 +15,7 @@ import Orb from "../../content/Backgrounds/Orb/Orb";
 import { orb } from "../../constants/code/Backgrounds/orbCode";
 
 const OrbDemo = () => {
-  const [hue, setHue] = useState(0);
+  const [hue, setHue] = useState(30);
   const [hoverIntensity, setHoverIntensity] = useState(0.5)
   const [rotateOnHover, setRotateOnHover] = useState(true);
   const [forceHoverState, setForceHoverState] = useState(false)
@@ -27,7 +27,7 @@ const OrbDemo = () => {
     {
       name: "hue",
       type: "number",
-      default: "0",
+      default: "30",
       description: "The base hue for the orb (in degrees)."
     },
     {
@@ -53,7 +53,7 @@ const OrbDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden" bg='#333333'>
           <Orb
             hoverIntensity={debouncedHoverIntensity}
             rotateOnHover={rotateOnHover}

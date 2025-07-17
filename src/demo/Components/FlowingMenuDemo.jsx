@@ -20,10 +20,10 @@ const FlowingMenuDemo = () => {
   ];
 
   const demoItems = [
-    { link: '#', text: 'Mojave', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'Sonoma', image: 'https://picsum.photos/600/400?random=2' },
-    { link: '#', text: 'Monterey', image: 'https://picsum.photos/600/400?random=3' },
-    { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
+    { link: '#', text: 'Menu 1', image: 'https://picsum.photos/600/400?random=1' },
+    { link: '#', text: 'Menu 2', image: 'https://picsum.photos/600/400?random=2' },
+    { link: '#', text: 'Menu 3', image: 'https://picsum.photos/600/400?random=3' },
+    { link: '#', text: 'Menu 4', image: 'https://picsum.photos/600/400?random=4' }
   ];
 
   return (
@@ -34,7 +34,7 @@ const FlowingMenuDemo = () => {
         </Box>
 
         <PropTable data={propData} />
-        <Dependencies dependencyList={['gsap']} />
+        
       </PreviewTab>
 
       <CodeTab>

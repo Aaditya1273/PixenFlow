@@ -22,7 +22,7 @@ const ThreadsDemo = () => {
     {
       name: "color",
       type: "[number, number, number]",
-      default: "[1, 1, 1]",
+      default: "[1, 0.65, 0]",
       description: "Customizes the color of the lines (RGB)."
     },
     {
@@ -49,8 +49,9 @@ const ThreadsDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0}>
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" p={0} bg='#333333'>
           <Threads
+            color={[1, 0.65, 0]}
             amplitude={amplitude}
             distance={distance}
             enableMouseInteraction={enableMouseInteraction}

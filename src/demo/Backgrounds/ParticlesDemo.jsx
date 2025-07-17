@@ -15,7 +15,7 @@ import { particles } from "../../constants/code/Backgrounds/particlesCode";
 import useForceRerender from "../../hooks/useForceRerender";
 
 const ParticlesDemo = () => {
-  const [colors, setColors] = useState('#ffffff');
+  const [colors, setColors] = useState('#FFA500');
 
   const [particleCount, setParticleCount] = useState(200);
   const [particleSpread, setParticleSpread] = useState(10);
@@ -50,7 +50,7 @@ const ParticlesDemo = () => {
     {
       name: "particleColors",
       type: "string[]",
-      default: "['#ffffff']",
+      default: "['#FFA500']",
       description: "An array of hex color strings used to color the particles."
     },
     {
@@ -100,7 +100,7 @@ const ParticlesDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} p={0} overflow="hidden" bg='#333333'>
           <Particles
             key={key}
             particleColors={[colors]}

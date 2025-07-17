@@ -15,8 +15,8 @@ import DotGrid from "../../content/Backgrounds/DotGrid/DotGrid";
 const DotGridDemo = () => {
   const [dotSize, setDotSize] = useState(5);
   const [gap, setGap] = useState(15);
-  const [baseColor, setBaseColor] = useState("#ffffff");
-  const [activeColor, setActiveColor] = useState("#5227FF");
+  const [baseColor, setBaseColor] = useState("#FFA500");
+  const [activeColor, setActiveColor] = useState("#000000");
   const [proximity, setProximity] = useState(120);
   const [shockRadius, setShockRadius] = useState(250);
   const [shockStrength, setShockStrength] = useState(5);
@@ -39,7 +39,7 @@ const DotGridDemo = () => {
     {
       name: "baseColor",
       type: "string",
-      default: "'#5227FF'",
+      default: "'#FFA500'",
       description: "Base color of the dots."
     },
     {
@@ -107,7 +107,7 @@ const DotGridDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} overflow="hidden">
+        <Box position="relative" className="demo-container" h={500} overflow="hidden" bg='#333333'>
           <DotGrid
             dotSize={dotSize}
             gap={gap}

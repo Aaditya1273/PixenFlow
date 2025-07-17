@@ -24,7 +24,7 @@ const AnimatedListDemo = () => {
     {
       name: "items",
       type: "string[]",
-      default: "['Item 1', 'Item 2', ...]",
+      default: "['box 1', 'box 2', ...]",
       description: "An array of items to display in the scrollable list."
     },
     {
@@ -84,7 +84,7 @@ const AnimatedListDemo = () => {
         </Box>
 
         <Customize>
-          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}>Customize</h2>
+          <h2 className="demo-title-extra" style={{ color: '#FFA500' }}></h2>
           <PreviewSwitch title="Fade Items" isChecked={showGradients} onChange={(checked) => { setShowGradients(checked); forceRerender() }} />
           <PreviewSwitch title="Keboard Navigation" isChecked={enableArrowNavigation} onChange={(checked) => { setEnableArrowNavigation(checked); forceRerender() }} />
           <PreviewSwitch title="Show Scrollbar" isChecked={displayScrollbar} onChange={(checked) => { setDisplayScrollbar(checked); forceRerender() }} />

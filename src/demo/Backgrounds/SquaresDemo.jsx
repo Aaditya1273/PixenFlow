@@ -13,7 +13,7 @@ import { squares } from '../../constants/code/Backgrounds/squaresCode';
 
 const SquaresDemo = () => {
   const [direction, setDirection] = useState('diagonal');
-  const [borderColor, setBorderColor] = useState('#271E37');
+  const [borderColor, setBorderColor] = useState('#FFA500');
   const [hoverColor, setHoverColor] = useState('#222222');
   const [size, setSize] = useState(40);
   const [speed, setSpeed] = useState(0.5);
@@ -21,7 +21,7 @@ const SquaresDemo = () => {
   const propData = [
     { name: "direction", type: "string", default: "'right'", description: "Direction of square animation. Options: 'diagonal', 'up', 'right', 'down', 'left'." },
     { name: "speed", type: "number", default: "1", description: "Animation speed multiplier." },
-    { name: "borderColor", type: "string", default: "'#999'", description: "Color of the square borders." },
+    { name: "borderColor", type: "string", default: "'#FFA500'", description: "Color of the square borders." },
     { name: "squareSize", type: "number", default: "40", description: "Size of individual squares in pixels." },
     { name: "hoverFillColor", type: "string", default: "'#222'", description: "Fill color when hovering over squares." },
   ];
@@ -29,7 +29,7 @@ const SquaresDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box direction="relative" minH={200} className="demo-container" overflow="hidden" p={0}>
+        <Box direction="relative" minH={200} className="demo-container" overflow="hidden" p={0} bg='#333333'>
           <Box w={"100%"} h={500} overflow="hidden">
             <Squares
               squareSize={size} s

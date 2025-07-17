@@ -36,8 +36,8 @@ const HyperspeedDemo = () => {
   return (
     <TabbedLayout>
       <PreviewTab>
-        <Box position="relative" className="demo-container" h={500} cursor="pointer" p={0} mb={4}>
-          <Text color="#271E37" position="absolute" fontWeight={900} top={6} fontSize='4rem'>Click & Hold</Text>
+        <Box position="relative" className="demo-container" h={500} cursor="pointer" p={0} mb={4} bg='#333333'>
+          <Text color="#FFFFFF" position="absolute" fontWeight={900} top={6} fontSize='4rem'>Click & Hold</Text>
           <Hyperspeed effectOptions={hyperspeedPresets[activePreset]} />
         </Box>
 
