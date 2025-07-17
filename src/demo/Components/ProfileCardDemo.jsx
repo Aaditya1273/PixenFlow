@@ -140,9 +140,9 @@ const ProfileCardDemo = () => {
         <Box position="relative" className="demo-container" h={700} overflow="hidden" bg="#333333">
           <ProfileCard
             key={key}
-            name="Javi A. Torres"
-            title="Software Engineer"
-            handle="javicodes"
+            name="James Potter"
+            title="SWE"
+            handle="jamiepotter"
             status="Online"
             contactText="Contact Me"
             avatarUrl="/assets/person.png"

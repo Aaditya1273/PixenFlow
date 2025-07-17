@@ -79,7 +79,6 @@ const LanyardDemo = () => {
         </Customize>
 
         <PropTable data={propData} />
-        <Dependencies dependencyList={['three', 'meshline', '@react-three/fiber', '@react-three/drei', '@react-three/rapier']} />
       </PreviewTab>
 
       <CodeTab>
