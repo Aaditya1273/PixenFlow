@@ -96,6 +96,7 @@ const FallingText = ({
     const rightWall = Bodies.rectangle(width + 25, height / 2, 50, height, boundaryOptions);
     const ceiling = Bodies.rectangle(width / 2, -25, width, 50, boundaryOptions);
 
+    textRef.current.style.opacity = 0;
     const wordSpans = textRef.current.querySelectorAll(".word");
     const wordBodies = [...wordSpans].map((elem) => {
       const rect = elem.getBoundingClientRect();
@@ -118,12 +119,18 @@ const FallingText = ({
       return { elem, body };
     });
 
+        const clonedElements = [];
     wordBodies.forEach(({ elem, body }) => {
-      elem.style.position = "absolute";
-      elem.style.left = `${body.position.x - body.bounds.max.x + body.bounds.min.x / 2}px`;
-      elem.style.top = `${body.position.y - body.bounds.max.y + body.bounds.min.y / 2}px`;
-      elem.style.transform = "none";
+      const clone = elem.cloneNode(true);
+      clone.style.position = "absolute";
+      clone.style.left = `${body.position.x}px`;
+      clone.style.top = `${body.position.y}px`;
+      clone.style.transform = `translate(-50%, -50%) rotate(${body.angle}rad)`;
+      canvasContainerRef.current.appendChild(clone);
+      clonedElements.push({ body, elem: clone });
     });
+
+    textRef.current.style.opacity = 0;
 
     const mouse = Mouse.create(containerRef.current);
     const mouseConstraint = MouseConstraint.create(engine, {
@@ -148,8 +155,9 @@ const FallingText = ({
     Runner.run(runner, engine);
     Render.run(render);
 
-    const updateLoop = () => {
-      wordBodies.forEach(({ body, elem }) => {
+        const updateLoop = () => {
+      if (!canvasContainerRef.current) return;
+      clonedElements.forEach(({ body, elem }) => {
         const { x, y } = body.position;
         elem.style.left = `${x}px`;
         elem.style.top = `${y}px`;
@@ -160,12 +168,17 @@ const FallingText = ({
     };
     updateLoop();
 
-    return () => {
+        return () => {
       Render.stop(render);
       Runner.stop(runner);
       if (render.canvas && canvasContainerRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         canvasContainerRef.current.removeChild(render.canvas);
+      }
+      if (canvasContainerRef.current) {
+        canvasContainerRef.current.innerHTML = '';
+      }
+      if (textRef.current) {
+        textRef.current.style.opacity = 1;
       }
       World.clear(engine.world);
       Engine.clear(engine);
