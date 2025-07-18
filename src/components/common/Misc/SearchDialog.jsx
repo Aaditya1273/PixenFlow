@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { Dialog, DialogOverlay, DialogContent, DialogBody } from '@chakra-ui/dialog';
+import { Dialog, DialogOverlay, DialogContent, DialogBody } from '@chakra-ui/modal';
 import {
   Input,
   InputGroup,
