@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
+  Dialog,
+  DialogOverlay,
+  DialogContent,
+  DialogBody,
   Input,
   InputGroup,
   Box,
@@ -207,18 +207,19 @@ const SearchDialog = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <ModalOverlay bg="rgba(0,0,0,0.9)" />
-      <ModalContent
+    <Dialog isOpen={isOpen} onClose={onClose} isCentered motionPreset="slideInBottom">
+      <DialogOverlay bg="blackAlpha.800" />
+      <DialogContent
         bg="#060010"
-        border="1px solid #392e4e"
-        rounded="xl"
         mx={4}
-        w="full"
-        maxW="720px"
-        my="10vh"
+        my={8}
+        maxW="600px"
+        rounded="2xl"
+        shadow="2xl"
+        overflow="hidden"
+        border="1px solid #271E37"
       >
-        <ModalBody padding="1em 1em .2em 1em">
+        <DialogBody p={0}>
           <InputGroup>
             <Icon as={FiSearch} color="#999" position="absolute" left="1rem" top="50%" transform="translateY(-50%)" />
             <Input
@@ -346,9 +347,9 @@ const SearchDialog = ({ isOpen, onClose }) => {
               </motion.div>
             )}
           </AnimatePresence>
-        </ModalBody>
-      </ModalContent>
-    </Modal>
+        </DialogBody>
+      </DialogContent>
+    </Dialog>
   );
 };
 
