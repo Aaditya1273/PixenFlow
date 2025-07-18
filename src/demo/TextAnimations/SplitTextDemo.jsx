@@ -4,6 +4,7 @@ import { CliTab, CodeTab, PreviewTab, TabbedLayout } from "../../components/comm
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
 import useForceRerender from "../../hooks/useForceRerender";
+import useIsMobile from "../../hooks/useIsMobile";
 import RefreshButton from "../../components/common/Preview/RefreshButton";
 import Dependencies from "../../components/code/Dependencies";
 import CodeExample from "../../components/code/CodeExample";
@@ -25,6 +26,7 @@ const SplitTextDemo = () => {
   const [showCallback, setShowCallback] = useState(true);
 
   const [key, forceRerender] = useForceRerender();
+  const isMobile = useIsMobile();
 
   const propData = [
     { name: "text", type: "string", default: '""', description: "The text content to animate." },
@@ -51,22 +53,31 @@ const SplitTextDemo = () => {
           color="#FFA500"
           minH={400}
           overflow="hidden"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
         >
-          <RefreshButton onClick={forceRerender} />
-          <SplitText
-            key={key}
-            text="Welcome you!"
-            delay={delay}
-            duration={duration}
-            ease={ease}
-            splitType={splitType}
-            threshold={threshold}
-            className="text-devider-demo"
-            onLetterAnimationComplete={showCallback ? () => toast("✨ All set! Animation complete.") : undefined}
-          />
+          {isMobile ? (
+            <Text fontSize="4xl" className="text-devider-demo">Welcome you!</Text>
+          ) : (
+            <>
+              <RefreshButton onClick={forceRerender} />
+              <SplitText
+                key={key}
+                text="Welcome you!"
+                delay={delay}
+                duration={duration}
+                ease={ease}
+                splitType={splitType}
+                threshold={threshold}
+                className="text-devider-demo"
+                onLetterAnimationComplete={showCallback ? () => toast("✨ All set! Animation complete.") : undefined}
+              />
+            </>
+          )}
         </Box>
 
-        <Customize>
+        {!isMobile && <Customize>
           <Flex gap={2} wrap="wrap">
             <Button
               fontSize="xs"
@@ -156,7 +167,7 @@ const SplitTextDemo = () => {
               forceRerender();
             }}
           />
-        </Customize>
+        </Customize>}
 
         <PropTable data={propData} />
         <Dependencies dependencyList={["gsap"]} />

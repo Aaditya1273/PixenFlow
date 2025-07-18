@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import useIsMobile from "../../../hooks/useIsMobile";
 import SplitText from "../../../content/TextAnimations/SplitText/SplitText";
 import { Box } from "@chakra-ui/react";
 import { gsap } from "gsap";
@@ -14,29 +15,18 @@ const ResponsiveSplitText = ({ isMobile, text, ...rest }) =>
     <SplitText text={text} {...rest} />
   );
 
-// FeatureCard component removed as requested
-
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const heroRef = useRef(null);
-  const ctaRef = useRef(null);
 
   useEffect(() => {
-    const checkIsMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkIsMobile();
-    window.addEventListener("resize", checkIsMobile);
-    
     // Animation for hero section
     gsap.fromTo(
       ".hero-main-content",
       { y: 100, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
     );
-    
-    // Scroll animations for features section removed as requested
-    
-    return () => window.removeEventListener("resize", checkIsMobile);
-  }, [isMobile]);
+  }, []);
 
   // Features array removed as requested
   const features = [];
