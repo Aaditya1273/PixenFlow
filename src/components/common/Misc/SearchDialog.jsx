@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { Dialog, DialogOverlay, DialogContent, DialogBody } from '@chakra-ui/modal';
+import { Modal, ModalOverlay, ModalContent, ModalBody } from '@chakra-ui/modal';
 import {
   Input,
   InputGroup,
@@ -128,85 +128,71 @@ const SearchDialog = ({ isOpen, onClose }) => {
     );
   }, [results]);
 
-  const handleSelect = useCallback(
-    (result) => {
-      const slug = (str) => str.replace(/\s+/g, "-").toLowerCase();
-      navigate(`/${slug(result.categoryName)}/${slug(result.componentName)}`);
+  const slug = (str) =>
+    str.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+
+  const handleSelect = (result) => {
+    if (!result) return;
+    const path = `/components/${slug(result.categoryName)}/${slug(
+      result.componentName
+    )}`;
+    navigate(path);
+    onClose();
+    toggleSearch();
+  };
+
+  const onKey = (e) => {
+    setKeyboardNav(true);
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev > 0 ? prev - 1 : 0));
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      handleSelect(results[selectedIndex]);
+    }
+  };
+
+  useEffect(() => {
+    if (selectedIndex === -1) return;
+    const selectedElement = resultsRef.current.querySelector(
+      `[data-index='${selectedIndex}']`
+    );
+    if (selectedElement) {
+      selectedElement.scrollIntoView({ block: "nearest" });
+    }
+  }, [selectedIndex]);
+
+  useEffect(() => {
+    const handleMouseMove = () => setKeyboardNav(false);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  useEffect(() => {
+    if (isOpen) {
       setInputValue("");
       setSearchValue("");
       setSelectedIndex(-1);
-      onClose();
-    },
-    [navigate, onClose]
-  );
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (!searchValue) return;
-      if (e.key === "ArrowDown" || (e.key === "Tab" && !e.shiftKey)) {
-        e.preventDefault();
-        setKeyboardNav(true);
-        setSelectedIndex((p) => Math.min(p + 1, results.length - 1));
-      } else if (e.key === "ArrowUp" || (e.key === "Tab" && e.shiftKey)) {
-        e.preventDefault();
-        setKeyboardNav(true);
-        setSelectedIndex((p) => Math.max(p - 1, 0));
-      } else if (e.key === "Enter" && selectedIndex >= 0) {
-        e.preventDefault();
-        handleSelect(results[selectedIndex]);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [results, searchValue, selectedIndex, handleSelect]);
-
-  useEffect(() => {
-    if (!keyboardNav || selectedIndex < 0 || !resultsRef.current) return;
-    const container = resultsRef.current;
-    const item = container.querySelector(`[data-index="${selectedIndex}"]`);
-    if (!item) return;
-
-    const margin = 50;
-    const itemTop = item.offsetTop;
-    const itemBottom = itemTop + item.offsetHeight;
-    if (itemTop < container.scrollTop + margin) {
-      container.scrollTo({ top: itemTop - margin, behavior: "smooth" });
-    } else if (
-      itemBottom >
-      container.scrollTop + container.clientHeight - margin
-    ) {
-      container.scrollTo({
-        top: itemBottom - container.clientHeight + margin,
-        behavior: "smooth",
-      });
     }
-    setKeyboardNav(false);
-  }, [selectedIndex, keyboardNav]);
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        toggleSearch();
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [toggleSearch]);
-
-  useEffect(() => {
-    if (isOpen) return;
-    setInputValue("");
-    setSearchValue("");
-    setSelectedIndex(-1);
-    setTopGradientOpacity(0);
-    setBottomGradientOpacity(1);
   }, [isOpen]);
 
   return (
-    <Dialog isOpen={isOpen} onClose={onClose} isCentered motionPreset="slideInBottom">
-      <DialogOverlay bg="blackAlpha.800" />
-      <DialogContent
+    <Modal isOpen={isOpen} onClose={onClose} isCentered motionPreset="slideInBottom">
+      <ModalOverlay bg="blackAlpha.800" />
+      <ModalContent
         bg="#060010"
         mx={4}
         my={8}
@@ -216,39 +202,32 @@ const SearchDialog = ({ isOpen, onClose }) => {
         overflow="hidden"
         border="1px solid #271E37"
       >
-        <DialogBody p={0}>
+        <ModalBody p={0}>
           <InputGroup>
             <Icon as={FiSearch} color="#999" position="absolute" left="1rem" top="50%" transform="translateY(-50%)" />
             <Input
-              autoFocus
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Search the docs"
-              variant="filled"
+              onKeyDown={onKey}
+              placeholder="Search components..."
+              variant="unstyled"
               bg="#060010"
-              fontSize="lg"
-              borderRadius="md"
               color="white"
-              pl="2.5rem"
-              _focus={{ bg: "#060010", borderColor: "transparent" }}
-              _hover={{ bg: "#060010" }}
-              _placeholder={{ color: "#271E37" }}
+              p="1.5rem 3.5rem"
+              autoFocus
             />
           </InputGroup>
-
           <AnimatePresence>
             {searchValue && (
               <motion.div
-                key="results"
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                style={{ overflow: "hidden" }}
+                transition={{ duration: 0.2 }}
               >
                 <Box
-                  mt={3}
-                  borderTop="1px solid #392e4e"
+                  p=".5em"
+                  borderTop="1px solid #271E37"
                   position="relative"
                 >
                   <Box
@@ -344,9 +323,9 @@ const SearchDialog = ({ isOpen, onClose }) => {
               </motion.div>
             )}
           </AnimatePresence>
-        </DialogBody>
-      </DialogContent>
-    </Dialog>
+        </ModalBody>
+      </ModalContent>
+    </Modal>
   );
 };
 
