@@ -21,23 +21,13 @@ const LandingPage = () => {
 
   return (
     <section className="landing-wrapper">
-      <title>Pixen Flow - Animated UI Components For React</title>
+      <title>Pixen Flow - Animated UI/UX Components For React</title>
 
-      {isMobile ? (
-        <div className="mobile-hero-background-container">
-          <img
-            src={heroImage}
-            alt="Hero background"
-            className="mobile-hero-background-image"
-          />
-        </div>
-      ) : (
-        <Aurora 
-          colorStops={["#5227FF", "#ff8c00", "#5227FF"]} 
-          amplitude={1.2} 
-          blend={0.6}
-        />
-      )}
+      <Aurora 
+        colorStops={["#5227FF", "#ff8c00", "#5227FF"]} 
+        amplitude={1.2} 
+        blend={0.6}
+      />
 
       <Hero />
       <Footer />
