@@ -59,9 +59,9 @@ function AppContent() {
 }
 
 export default function App() {
-  useEffect(() => {
-    forceChakraDarkTheme();
-  }, []);
+  // useEffect(() => {
+  //   forceChakraDarkTheme();
+  // }, []);
 
   return (
     <Router>
