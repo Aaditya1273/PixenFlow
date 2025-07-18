@@ -94,7 +94,6 @@ const SearchDialog = ({ isOpen, onClose }) => {
   const [topGradientOpacity, setTopGradientOpacity] = useState(0);
   const [bottomGradientOpacity, setBottomGradientOpacity] = useState(1);
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const [keyboardNav, setKeyboardNav] = useState(false);
   const resultsRef = useRef(null);
   const navigate = useNavigate();
   const { toggleSearch } = useSearch();
@@ -103,7 +102,7 @@ const SearchDialog = ({ isOpen, onClose }) => {
     const t = setTimeout(() => {
       setSearchValue(inputValue);
       setSelectedIndex(-1);
-    }, 500);
+    }, 300);
     return () => clearTimeout(t);
   }, [inputValue]);
 
@@ -142,7 +141,6 @@ const SearchDialog = ({ isOpen, onClose }) => {
   };
 
   const onKey = (e) => {
-    setKeyboardNav(true);
     if (e.key === "ArrowDown") {
       e.preventDefault();
       setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
@@ -156,20 +154,14 @@ const SearchDialog = ({ isOpen, onClose }) => {
   };
 
   useEffect(() => {
-    if (selectedIndex === -1) return;
+    if (selectedIndex === -1 || !resultsRef.current) return;
     const selectedElement = resultsRef.current.querySelector(
       `[data-index='${selectedIndex}']`
     );
     if (selectedElement) {
-      selectedElement.scrollIntoView({ block: "nearest" });
+      selectedElement.scrollIntoView({ block: "nearest", behavior: 'smooth' });
     }
   }, [selectedIndex]);
-
-  useEffect(() => {
-    const handleMouseMove = () => setKeyboardNav(false);
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -260,7 +252,7 @@ const SearchDialog = ({ isOpen, onClose }) => {
                             onClick={() => handleSelect(r)}
                           >
                             <Box
-                              mt={i === 0 ? 8 : 2}
+                              mt={i === 0 ? 2 : 2}
                               mr=".6em"
                               mb={2}
                               p="1em"
