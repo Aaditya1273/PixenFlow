@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes, useLocation, lazy, Suspense } from 'react-router-dom';
 import { SearchProvider } from './components/context/SearchContext/SearchContext';
 import { LanguageProvider } from './components/context/LanguageContext/LanguageContext';
 import { TransitionProvider } from './components/context/TransitionContext/TransitionContext';
@@ -10,10 +10,11 @@ import { toastStyles } from './utils/customTheme';
 import DisplayHeader from './components/landing/DisplayHeader/DisplayHeader';
 import Header from './components/navs/Header';
 import Sidebar from './components/navs/Sidebar';
-import LandingPage from './pages/LandingPage';
-import CategoryPage from './pages/CategoryPage';
-import ShowcasePage from './pages/ShowcasePage';
 import Search from './components/common/Misc/Search';
+
+const LandingPage = lazy(() => import('./pages/LandingPage'));
+const ShowcasePage = lazy(() => import('./pages/ShowcasePage'));
+const CategoryPage = lazy(() => import('./pages/CategoryPage'));
 
 function AppContent() {
   const location = useLocation();
@@ -30,8 +31,36 @@ function AppContent() {
     <>
       {!isCategoryPage && <DisplayHeader activeItem={getActiveItem()} />}
       <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/showcase" element={<ShowcasePage />} />
+        <Route
+          exact
+          path="/"
+          element={
+            <Suspense
+              fallback={
+                <Flex justify="center" align="center" h="100vh">
+                  <Spinner size="xl" />
+                </Flex>
+              }
+            >
+              <LandingPage />
+            </Suspense>
+          }
+        />
+                <Route
+          exact
+          path="/showcase"
+          element={
+            <Suspense
+              fallback={
+                <Flex justify="center" align="center" h="100vh">
+                  <Spinner size="xl" />
+                </Flex>
+              }
+            >
+              <ShowcasePage />
+            </Suspense>
+          }
+        />
         <Route
           path="/:category/:subcategory"
           element={
@@ -41,7 +70,15 @@ function AppContent() {
                   <Header />
                   <section className="category-wrapper">
                     <Sidebar />
-                    <CategoryPage />
+                    <Suspense
+                      fallback={
+                        <Flex justify='center' align='center' h='100vh'>
+                          <Spinner size='xl' />
+                        </Flex>
+                      }
+                    >
+                      <CategoryPage />
+                    </Suspense>
                   </section>
                   <Toaster
                     toastOptions={toastStyles}
@@ -59,9 +96,9 @@ function AppContent() {
 }
 
 export default function App() {
-  // useEffect(() => {
-  //   forceChakraDarkTheme();
-  // }, []);
+  useEffect(() => {
+    forceChakraDarkTheme();
+  }, []);
 
   return (
     <Router>

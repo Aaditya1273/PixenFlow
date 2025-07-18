@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import {
-  Dialog,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
   Input,
   InputGroup,
   Box,
@@ -204,154 +207,148 @@ const SearchDialog = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   return (
-    <Dialog.Root open={isOpen} onOpenChange={onClose}>
-      <Dialog.Backdrop bg="rgba(0,0,0,0.9)" />
-      <Dialog.Positioner placement="top">
-        <Dialog.Content
-          bg="#060010"
-          border="1px solid #392e4e"
-          rounded="xl"
-          mx={4}
-          w="full"
-          maxW="720px"
-        >
-          <Dialog.Body padding="1em 1em .2em 1em">
-            <InputGroup startElement={<Icon as={FiSearch} color="#999" />} mb={3}>
-              <Input
-                autoFocus
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Search the docs"
-                variant="filled"
-                bg="#060010"
-                fontSize="lg"
-                borderRadius="md"
-                color="white"
-                _focus={{ bg: "#060010", borderColor: "transparent" }}
-                _hover={{ bg: "#060010" }}
-                _placeholder={{ color: "#271E37" }}
-              />
-            </InputGroup>
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay bg="rgba(0,0,0,0.9)" />
+      <ModalContent
+        bg="#060010"
+        border="1px solid #392e4e"
+        rounded="xl"
+        mx={4}
+        w="full"
+        maxW="720px"
+        my="10vh"
+      >
+        <ModalBody padding="1em 1em .2em 1em">
+          <InputGroup>
+            <Icon as={FiSearch} color="#999" position="absolute" left="1rem" top="50%" transform="translateY(-50%)" />
+            <Input
+              autoFocus
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Search the docs"
+              variant="filled"
+              bg="#060010"
+              fontSize="lg"
+              borderRadius="md"
+              color="white"
+              pl="2.5rem"
+              _focus={{ bg: "#060010", borderColor: "transparent" }}
+              _hover={{ bg: "#060010" }}
+              _placeholder={{ color: "#271E37" }}
+            />
+          </InputGroup>
 
-            <AnimatePresence>
-              {searchValue && (
-                <motion.div
-                  key="results"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  style={{ overflow: "hidden" }}
+          <AnimatePresence>
+            {searchValue && (
+              <motion.div
+                key="results"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ overflow: "hidden" }}
+              >
+                <Box
+                  mt={3}
+                  borderTop="1px solid #392e4e"
+                  position="relative"
                 >
                   <Box
-                    mt={3}
-                    borderTop="1px solid #392e4e"
-                    position="relative"
+                    ref={resultsRef}
+                    maxH={400}
+                    overflowY="auto"
+                    onScroll={handleScroll}
+                    sx={{
+                      "&::-webkit-scrollbar": { width: "8px" },
+                      "&::-webkit-scrollbar-track": { bg: "#060010" },
+                      "&::-webkit-scrollbar-thumb": {
+                        bg: "#271E37",
+                        rounded: "4px",
+                      },
+                      scrollbarWidth: "thin",
+                      scrollbarColor: "#271E37 #060010",
+                    }}
                   >
-                    <Box
-                      ref={resultsRef}
-                      maxH={400}
-                      overflowY="auto"
-                      onScroll={handleScroll}
-                      sx={{
-                        "&::-webkit-scrollbar": { width: "8px" },
-                        "&::-webkit-scrollbar-track": { bg: "#060010" },
-                        "&::-webkit-scrollbar-thumb": {
-                          bg: "#271E37",
-                          rounded: "4px",
-                        },
-                        scrollbarWidth: "thin",
-                        scrollbarColor: "#271E37 #060010",
-                      }}
-                    >
-                      {results.length > 0 ? (
-                        results.map((r, i) => {
-                          const IconComp =
-                            categoryIconMapping[r.categoryName] || FiSearch;
-                          const selected = i === selectedIndex;
-                          return (
-                            <AnimatedResult
-                              key={`${r.categoryName}-${r.componentName}-${i}`}
-                              delay={0.05}
-                              dataIndex={i}
-                              onMouseEnter={() => setSelectedIndex(i)}
-                              onClick={() => handleSelect(r)}
+                    {results.length > 0 ? (
+                      results.map((r, i) => {
+                        const IconComp =
+                          categoryIconMapping[r.categoryName] || FiSearch;
+                        const selected = i === selectedIndex;
+                        return (
+                          <AnimatedResult
+                            key={`${r.categoryName}-${r.componentName}-${i}`}
+                            delay={0.05}
+                            dataIndex={i}
+                            onMouseEnter={() => setSelectedIndex(i)}
+                            onClick={() => handleSelect(r)}
+                          >
+                            <Box
+                              mt={i === 0 ? 8 : 2}
+                              mr=".6em"
+                              mb={2}
+                              p="1em"
+                              bg={selected ? "#392e4e" : "#271E37"}
+                              rounded="xl"
+                              display="flex"
+                              alignItems="center"
                             >
-                              <Box
-                                mt={i === 0 ? 8 : 2}
-                                mr=".6em"
-                                mb={2}
-                                p="1em"
-                                bg={selected ? "#392e4e" : "#271E37"}
-                                rounded="xl"
-                                display="flex"
-                                alignItems="center"
-                              >
-                                <Box mr="16px">
-                                  <IconComp size={24} color="#B19EEF" />
-                                </Box>
-                                <Box flex="1">
-                                  <Text fontWeight="bold" fontSize="16px" color="white">
-                                    {r.componentName}
-                                  </Text>
-                                  <Text fontSize="sm" color="#B19EEF">
-                                    in {r.categoryName}
-                                  </Text>
-                                </Box>
-                                <Box>
-                                  <AiOutlineEnter size={20} color="#B19EEF" />
-                                </Box>
+                              <Box mr="16px">
+                                <IconComp size={24} color="#B19EEF" />
                               </Box>
-                            </AnimatedResult>
-                          );
-                        })
-                      ) : (
-                        <Text
-                          textAlign="center"
-                          mt={3}
-                          color="#B19EEF"
-                          p="1em"
-                        >
-                          No results found for{" "}
-                          <span style={{ fontWeight: 900 }}>{searchValue}</span>
-                        </Text>
-                      )}
-                    </Box>
-
-                    <Box
-                      position="absolute"
-                      top={0}
-                      left={0}
-                      right={0}
-                      h="50px"
-                      bg="linear-gradient(to bottom, #060010, transparent)"
-                      pointerEvents="none"
-                      style={{
-                        transition: "opacity 0.3s",
-                        opacity: topGradientOpacity,
-                      }}
-                    />
-                    <Box
-                      position="absolute"
-                      bottom={0}
-                      left={0}
-                      right={0}
-                      h="100px"
-                      bg="linear-gradient(to top, #060010, transparent)"
-                      pointerEvents="none"
-                      style={{
-                        transition: "opacity 0.3s",
-                        opacity: bottomGradientOpacity,
-                      }}
-                    />
+                              <Box flex="1">
+                                <Text fontWeight="bold" fontSize="16px" color="white">
+                                  {r.componentName}
+                                </Text>
+                                <Text fontSize="sm" color="#B19EEF">
+                                  in {r.categoryName}
+                                </Text>
+                              </Box>
+                              <Box
+                                ml="auto"
+                                opacity={selected ? 1 : 0}
+                                transition="opacity 0.2s"
+                              >
+                                <Icon as={AiOutlineEnter} color="#B19EEF" />
+                              </Box>
+                            </Box>
+                          </AnimatedResult>
+                        );
+                      })
+                    ) : (
+                      <Text p={8} textAlign="center" color="#999">
+                        No results for "{searchValue}"
+                      </Text>
+                    )}
                   </Box>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </Dialog.Body>
-        </Dialog.Content>
-      </Dialog.Positioner>
-    </Dialog.Root>
+                  <Box
+                    pos="absolute"
+                    top={0}
+                    left={0}
+                    right={0}
+                    h="50px"
+                    bg="linear-gradient(to bottom, #060010, transparent)"
+                    opacity={topGradientOpacity}
+                    transition="opacity 0.3s"
+                    pointerEvents="none"
+                  />
+                  <Box
+                    pos="absolute"
+                    bottom={0}
+                    left={0}
+                    right={0}
+                    h="50px"
+                    bg="linear-gradient(to top, #060010, transparent)"
+                    opacity={bottomGradientOpacity}
+                    transition="opacity 0.3s"
+                    pointerEvents="none"
+                  />
+                </Box>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </ModalBody>
+      </ModalContent>
+    </Modal>
   );
 };
 
