@@ -1,101 +1,59 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
-import useIsMobile from "../../../hooks/useIsMobile";
-import SplitText from "../../../content/TextAnimations/SplitText/SplitText";
-import { Box } from "@chakra-ui/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { memo, lazy, Suspense } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
 
-const ResponsiveSplitText = ({ isMobile, text, ...rest }) =>
-  isMobile ? (
-    <span className={rest.className}>{text}</span>
-  ) : (
-    <SplitText text={text} {...rest} />
-  );
+const HeroVisual = lazy(() => import('./HeroVisual'));
 
-const Hero = () => {
-  const isMobile = useIsMobile();
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    // Animation for hero section
-    gsap.fromTo(
-      ".hero-main-content",
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-  }, []);
-
-  // Features array removed as requested
-  const features = [];
-
+// Optimized Hero component with minimal JavaScript for better performance
+const Hero = memo(() => {
   return (
     <>
-      <div className="landing-content" ref={heroRef}>
-        <div className="hero-main-content">
-          <div className="hero-badge">Pixen Flow UI Library</div>
-          
-          <h1 className="landing-title">
-            <ResponsiveSplitText
-              isMobile={isMobile}
-              text="Elevate Your UI"
-              className="hero-split"
-              splitType="chars"
-              delay={30}
-              duration={2}
-              ease="elastic.out(0.5, 0.3)"
-            />
-            <br />
-            <ResponsiveSplitText
-              isMobile={isMobile}
-              text="With Modern Components"
-              className="hero-split"
-              splitType="chars"
-              delay={30}
-              duration={2}
-              ease="elastic.out(0.5, 0.3)"
-            />
-          </h1>
+      {/* Navigation */}
+      
 
-          <ResponsiveSplitText
-            isMobile={isMobile}
-            className="landing-subtitle"
-            splitType="words"
-            delay={10}
-            duration={1}
-            text="A premium collection of animated React components to create stunning, interactive user interfaces."
-          />
+      {/* Hero Section */}
+      <div className="hero-section">
+        <div className="hero-container">
+          <div className="hero-content">
+            
+            <h1 className="hero-title">
+              <span className="title-line">Build Stunning UI/UX</span>
+              <br />
+              <span className="title-line gradient-text">Faster Than Ever</span>
+            </h1>
 
-          <div className="hero-buttons">
-            <Link to={"/text-animations/text-devider"} className="landing-button primary-button">
-              <span>Explore Components</span>
-              <div className="button-arrow-circle">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="#ffffff"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6 12L10 8L6 4"
-                    stroke="#4c1d95"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-            </Link>
+            <p className="hero-description">
+            A curated library of production-ready React components to bring your creative visions to life.
+            </p>
+
+            <div className="hero-actions">
+              <Link to="/text-animations/text-devider" className="btn btn-primary">
+                <span>Explore Components</span>
+                <span className="btn-arrow">→</span>
+              </Link>
+            </div>
           </div>
+
+          {/* Lazy-loaded visual elements */}
+          <Suspense fallback={<div style={{ height: '500px' }} />}>
+            <HeroVisual />
+          </Suspense>
+
         </div>
       </div>
-      
-      {/* Features section removed as requested */}
+
+      {/* Floating Elements Background */}
+      <div className="bg-elements">
+        <div className="bg-gradient bg-gradient-1"></div>
+        <div className="bg-gradient bg-gradient-2"></div>
+        <div className="bg-gradient bg-gradient-3"></div>
+      </div>
+
+      {/* The Features component has been moved to LandingPage.jsx */}
     </>
   );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;

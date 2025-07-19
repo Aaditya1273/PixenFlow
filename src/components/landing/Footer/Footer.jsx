@@ -30,60 +30,10 @@ const Footer = () => {
       }
     );
     
-    // Animate feature cards with a staggered entrance
-    gsap.fromTo(
-      footerRef.current.querySelectorAll('.feature-card'),
-      { scale: 0.8, opacity: 0, y: 30 },
-      {
-        scale: 1,
-        opacity: 1,
-        y: 0,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: 'back.out(1.7)',
-        scrollTrigger: {
-          trigger: footerRef.current.querySelector('.feature-cards-row'),
-          start: 'top 85%',
-        },
-      }
-    );
-    
-    // Animate the circular icons with a spin effect
-    gsap.fromTo(
-      footerRef.current.querySelectorAll('.feature-icon-circle'),
-      { rotation: -180, opacity: 0 },
-      {
-        rotation: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
-        ease: 'elastic.out(1, 0.3)',
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: footerRef.current.querySelector('.feature-cards-row'),
-          start: 'top 85%',
-        },
-      }
-    );
+    // Animations for duplicated feature cards removed.
   }, []);
 
-  const featureCards = [
-    {
-      icon: <FiInfo size={28} />,
-      title: 'Responsive Design',
-      description: 'Components that look great on any device, from mobile to desktop.'
-    },
-    {
-      icon: <FiSettings size={28} />,
-      title: 'Customizable',
-      description: 'Easily adapt components to match your brand\'s unique style and requirements.'
-    },
-    {
-      icon: <FiStar size={28} />,
-      title: 'Production Ready',
-      description: 'Thoroughly tested components that are ready for your production environment.'
-    }
-  ];
+  // Data for duplicated feature cards removed.
 
   return (
     <footer className="landing-footer">
@@ -100,18 +50,10 @@ const Footer = () => {
         disableRotation={false}
       />
       <div ref={footerRef}>
-        <div className="footer-content">
-          <div className="feature-cards-row footer-animate">
-            {featureCards.map((card, index) => (
-              <div key={index} className="feature-card">
-                <div className="feature-icon-circle">
-                  {card.icon}
-                </div>
-                <h3 className="feature-title">{card.title}</h3>
-                <p className="feature-description">{card.description}</p>
-              </div>
-            ))}
-          </div>
+
+        <div className="footer-section">
+          <h2 className="footer-title footer-animate">Explore the Possibilities</h2>
+          <p className="footer-subtitle footer-animate">Start building your Next-Level UI/UX with PixenFlow</p>
         </div>
         <div className="footer-main">
           <div className="footer-left footer-animate">
@@ -123,7 +65,7 @@ const Footer = () => {
               Beautiful UI components for React developers
             </div>
             <div className="footer-copyright">
-              made with love by Pixen Flow since 2025
+              Made with Love by Pixen Flow since 2025.
             </div>
           </div>
         </div>

@@ -27,10 +27,11 @@ function AppContent() {
   };
 
   const isCategoryPage = location.pathname.match(/^\/[^/]+\/[^/]+$/);
+  const isLandingPage = location.pathname === '/';
 
   return (
     <>
-      {!isCategoryPage && <DisplayHeader activeItem={getActiveItem()} />}
+      {!isCategoryPage && !isLandingPage && <DisplayHeader activeItem={getActiveItem()} />}
       <Routes>
         <Route
           exact
