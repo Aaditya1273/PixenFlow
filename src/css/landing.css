@@ -848,19 +848,19 @@ body, html, #root {
 
 .hero-card-1 {
   opacity: 1;
-  transform: rotate(-13deg);
+  transform: rotate(0deg);
   transition: transform 0.5s ease;
 }
 
 .hero-card-2 {
   opacity: 1;
-  transform: rotate(10deg);
+  transform: rotate(0deg);
   transition: transform 0.5s ease;
 }
 
 .hero-card-3 {
   opacity: 1;
-  transform: rotate(-5deg);
+  transform: rotate(0deg);
   transition: transform 0.5s ease;
 }
 
@@ -875,7 +875,7 @@ body, html, #root {
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  transform: rotate(360deg);
+  transform: rotate(0deg);
 }
 
 .hero-card::before {
@@ -1006,21 +1006,21 @@ body, html, #root {
   }
 
   .hero-card-1 {
-    opacity: 1;
-    transform: rotate(-13deg);
-    transition: transform 0.5s ease;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .hero-card-2 {
-    opacity: 1;
-    transform: rotate(10deg);
-    transition: transform 0.5s ease;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .hero-card-3 {
-    opacity: 1;
-    transform: rotate(-5deg);
-    transition: transform 0.5s ease;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .landing-wrapper>div[style*="position: absolute"][style*="width: 100vw"][style*="height: 100vh"] {
@@ -1136,21 +1136,21 @@ body, html, #root {
   }
 
   .hero-card-1 {
-    animation: fadeInUpMobileRotate1 0.8s ease-out forwards;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
     animation-delay: 0.2s;
-    transform: translateY(0) scale(1) rotate(-13deg);
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .hero-card-2 {
-    animation: fadeInUpMobileRotate2 0.8s ease-out forwards;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
     animation-delay: 0.4s;
-    transform: translateY(0) scale(1) rotate(10deg);
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .hero-card-3 {
-    animation: fadeInUpMobileRotate3 0.8s ease-out forwards;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
     animation-delay: 0.6s;
-    transform: translateY(0) scale(1) rotate(-5deg);
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .landing-wrapper>div[style*="position: absolute"][style*="width: 100vw"][style*="height: 100vh"] {
@@ -1321,21 +1321,21 @@ body, html, #root {
   }
 
   .hero-card-1 {
-    animation: fadeInUpMobileRotate1 0.8s ease-out forwards;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
     animation-delay: 0.2s;
-    transform: translateY(0) scale(1) rotate(-13deg);
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .hero-card-2 {
-    animation: fadeInUpMobileRotate2 0.8s ease-out forwards;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
     animation-delay: 0.4s;
-    transform: translateY(0) scale(1) rotate(10deg);
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .hero-card-3 {
-    animation: fadeInUpMobileRotate3 0.8s ease-out forwards;
+    animation: fadeInUpMobile 0.8s ease-out forwards;
     animation-delay: 0.6s;
-    transform: translateY(0) scale(1) rotate(-5deg);
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 
   .landing-wrapper>div[style*="position: absolute"][style*="width: 100vw"][style*="height: 100vh"] {
